@@ -1,0 +1,467 @@
+:root{
+  --primary:#2A6CF6;
+  --teal:#00B89F;
+  --work:#2A6CF6;
+  --rest:#d5d9e0;
+  --bg:#243040;
+  --card:#1C2333;
+  --stroke:rgba(255,255,255,.08);
+  --muted:rgba(255,255,255,.65);
+  --text:#F8F8F8;
+}
+
+/* Theme toggle removed: use a single palette. */
+
+*{box-sizing:border-box;}
+
+/* Bootstrap Offcanvas backdrop: reduce page dimming without affecting the panel */
+.offcanvas-backdrop{
+  opacity:0 !important;
+}
+
+/* Make sure the offcanvas panel is never visually affected */
+.offcanvas{
+  opacity:1 !important;
+  filter:none !important;
+}
+
+html,body{height:100%;}
+
+.app-body{
+  background:var(--bg);
+  color:var(--text);
+  font-family:"Poppins",system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+}
+
+/* Override Bootstrap defaults for dark UI */
+.card,
+.card-body,
+.card-title,
+.card-text,
+.list-unstyled,
+blockquote{
+  color:inherit;
+}
+
+/* Ensure dashboard cards always use light text */
+.dash-card{color:var(--text);}
+
+h1,h2,h3,h4,h5,.modal-title,.view-title,.panel-title,.section-title{
+  font-family:"Comfortaa",system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+  letter-spacing:.2px;
+}
+
+[data-number],.stat-value,.mini-value{
+  font-family:Bahnschrift,"DIN Alternate","Segoe UI",system-ui,sans-serif;
+  font-variant-numeric:tabular-nums;
+}
+
+.app-shell{display:flex;min-height:100vh;}
+
+.app-sidebar{
+  width:260px;
+  flex:0 0 260px;
+  background:color-mix(in srgb, var(--card) 92%, transparent);
+  border-right:1px solid var(--stroke);
+  padding:14px 12px;
+  z-index:1040;
+  position:sticky;
+  top:0;
+  height:100vh;
+}
+
+/* Bootstrap Offcanvas is hidden by default; keep it always visible on md+ */
+@media (min-width: 768px){
+  #sidebar.offcanvas-md{
+    position:sticky;
+    transform:none;
+    visibility:visible;
+    display:block;
+  }
+}
+
+/* When used as an Offcanvas on mobile, Bootstrap controls positioning/backdrop.
+   On md+ this remains a static sidebar inside .app-shell. */
+@media (max-width: 767.98px){
+  .app-sidebar{
+    position:fixed;
+    top:0;
+    height:100vh;
+    border-right:1px solid var(--stroke);
+  }
+
+  /* Prevent the sidebar itself from looking dim/faded during Offcanvas transitions */
+  #sidebar.offcanvas{
+    opacity:1 !important;
+    filter:none !important;
+  }
+  #sidebar.offcanvas.offcanvas-start{
+    transition:transform .2s ease !important;
+  }
+}
+
+.sidebar-top{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:14px;}
+
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--text);}
+.brand-badge{width:34px;height:34px;border-radius:10px;background:linear-gradient(135deg,#2A6CF6,#00B89F);display:inline-block;}
+.brand-text{font-weight:600;}
+
+.btn-ghost{
+  background:transparent;
+  border:1px solid transparent;
+  color:var(--text);
+}
+.btn-ghost:hover{background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.06);}
+
+.sidebar-close{display:none;}
+
+@media (max-width: 767.98px){
+  .sidebar-close{display:inline-flex;}
+}
+
+.sidebar-nav{display:flex;flex-direction:column;gap:6px;}
+
+
+.nav-item{
+  display:flex;align-items:center;gap:10px;
+  padding:10px 10px;
+  border-radius:10px;
+  color:var(--text);
+  text-decoration:none;
+  border:1px solid transparent;
+}
+.nav-item:hover{background:rgba(148,163,184,.12);}
+.nav-item.active{background:rgba(42,108,246,.12);border-color:rgba(42,108,246,.35);}
+
+.nav-ico{width:22px;text-align:center;opacity:.9;}
+
+.nav-subitem{
+  display:block;
+  padding:8px 12px 8px 40px;
+  border-radius:10px;
+  color:var(--text);
+  text-decoration:none;
+}
+.nav-subitem:hover{background:rgba(148,163,184,.12);}
+
+.nav-accordion{width:100%;text-align:left;}
+
+.app-main{flex:1;min-width:0;}
+
+.app-header{
+  position:sticky;
+  top:0;
+  z-index:1030;
+  background:color-mix(in srgb, var(--card) 92%, transparent);
+  backdrop-filter:blur(10px);
+  border-bottom:1px solid var(--stroke);
+  padding:10px 14px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:12px;
+}
+
+.header-left{display:flex;align-items:center;gap:12px;}
+.header-right{display:flex;align-items:center;gap:10px;}
+
+.header-icon{padding:8px 10px;border-radius:10px;}
+
+.page-title{opacity:.85;font-weight:500;}
+
+
+.profile-chip{display:flex;align-items:center;gap:10px;border-radius:999px;padding:6px 10px;}
+.avatar{width:34px;height:34px;border-radius:999px;background:rgba(255,255,255,.10);display:grid;place-items:center;font-weight:600;}
+
+.dropdown-dark{
+  background:var(--card);
+  border:1px solid var(--stroke);
+}
+.dropdown-dark .dropdown-item{color:var(--text);font-family:"Poppins";}
+.dropdown-dark .dropdown-item:hover{background:rgba(148,163,184,.16);}
+.dropdown-dark .dropdown-divider{border-top-color:var(--stroke);}
+
+.view{display:none;}
+.view.active{display:block;}
+
+.hero-card{
+  background:linear-gradient(135deg,rgba(42,108,246,.95),rgba(42,108,246,.55));
+  border:1px solid rgba(42,108,246,.35);
+  border-radius:16px;
+  padding:18px;
+}
+.hero-title{font-size:1.6rem;margin:0 0 4px;}
+.hero-sub{color:rgba(255,255,255,.88);}
+.hero-date{margin-top:10px;background:rgba(255,255,255,.18);border-radius:12px;padding:10px;max-width:320px;}
+.hero-date-label{font-size:.75rem;color:rgba(255,255,255,.85);}
+.hero-date-value{font-weight:600;}
+
+/* Dashboard cards (index.php) */
+.dash-card{
+  background:var(--card);
+  border-radius:14px;
+}
+
+.dash-icon{
+  width:46px;
+  height:46px;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+}
+.dash-icon i{color:var(--text);font-size:1.25rem;}
+.dash-icon.bg-primary-ink{background:#4049F3;}
+.dash-icon.bg-success-ink{background:#2FB833;}
+
+.dash-label{
+  letter-spacing:.08em;
+  font-size:.75rem;
+  opacity:.8;
+}
+
+/* Attendance + Break section helpers */
+.app-muted{color:var(--muted) !important;}
+
+.panel-header{
+  padding:1rem 1.5rem;
+  border-bottom:1px solid var(--stroke);
+  background:linear-gradient(90deg, var(--panel-start), var(--panel-end));
+}
+.panel-header--teal{
+  --panel-start:rgba(0,184,159,.95);
+  --panel-end:rgba(0,184,159,.72);
+}
+.panel-header--primary{
+  --panel-start:rgba(64,73,243,.95);
+  --panel-end:rgba(64,73,243,.70);
+}
+
+.alert-app{
+  background:rgba(255,255,255,.06);
+  border-color:var(--stroke);
+  color:var(--text);
+}
+
+.control-app{
+  background:rgba(255,255,255) !important;
+  border-color:var(--stroke) !important;
+  color: #06201b!important;
+}
+.control-app:disabled{opacity:.55 !important;}
+
+.info-box{
+  border-radius:.75rem;
+  padding:1rem;
+}
+.info-box--primary{
+  background:rgba(42,108,246,.10);
+  border:1px solid rgba(42,108,246,.35);
+}
+.info-box--warning{
+  background:rgba(255,193,7,.10);
+  border:1px solid rgba(255,193,7,.35);
+}
+.info-box-title--primary{color:rgba(42,108,246,.95);}
+.info-box-title--warning{color:rgba(255,193,7,.95);}
+
+.btn-teal-app{
+  background:var(--teal);
+  border-color:var(--teal);
+  color:#06201b;
+  font-family:"Comfortaa",system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+  font-weight:700;
+}
+.btn-teal-app:disabled{opacity:.55;}
+
+.stat-ico{
+  width:48px;
+  height:48px;
+  border-radius:12px;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+}
+.stat-ico i{font-size:1.3rem;}
+.stat-ico--success{background:rgba(47,184,51,.18);}
+.stat-ico--success i{color:#2FB833;}
+.stat-ico--danger{background:rgba(220,53,69,.18);}
+.stat-ico--danger i{color:#ff6b7a;}
+.stat-ico--warning{background:rgba(248,230,32,.18);}
+.stat-ico--warning i{color:#F8E620;}
+.stat-ico--primary{background:rgba(64,73,243,.18);}
+.stat-ico--primary i{color:#8ea0ff;}
+
+.attendance-table{
+  --bs-table-bg:var(--card);
+  --bs-table-border-color:var(--stroke);
+}
+.attendance-table thead{background:rgba(255,255,255,.04);}
+.td-muted{color:var(--muted) !important;}
+.td-number{font-family:Bahnschrift,system-ui;}
+
+.modal-app{
+  background:var(--card);
+  border:1px solid var(--stroke);
+  color:var(--text);
+}
+.modal-app .modal-header{border-bottom:1px solid var(--stroke);}
+.modal-app .modal-footer{border-top:1px solid var(--stroke);}
+.modal-divider-top{border-top:1px solid var(--stroke);padding-top:14px;}
+
+/* Add Overtime modal */
+.ot-modal .modal-header{color:var(--text);} /* gradient comes from panel-header */
+.ot-type-btn{
+  background:rgba(255,255,255,.04) !important;
+  border:2px solid rgba(255,255,255,.08) !important;
+  color:var(--text) !important;
+  text-align:left;
+  padding:14px 14px;
+  border-radius:12px;
+}
+.ot-type .btn-check:checked + .ot-type-btn{
+  border-color:color-mix(in srgb, var(--teal) 72%, white 0%) !important;
+  background:rgba(0,184,159,.10) !important;
+}
+.ot-dot{
+  width:18px;
+  height:18px;
+  border-radius:999px;
+  border:2px solid rgba(255,255,255,.28);
+  display:inline-block;
+  position:relative;
+}
+.ot-type .btn-check:checked + .ot-type-btn .ot-dot{border-color:var(--teal);}
+.ot-type .btn-check:checked + .ot-type-btn .ot-dot::after{
+  content:"";
+  position:absolute;
+  width:10px;
+  height:10px;
+  border-radius:999px;
+  background:var(--teal);
+  top:50%;
+  left:50%;
+  transform:translate(-50%,-50%);
+}
+.ot-total{display:flex;align-items:center;min-height:44px;}
+.ot-summary{
+  background:linear-gradient(90deg, rgba(0,184,159,.12), rgba(42,108,246,.12));
+  border:1px solid rgba(0,184,159,.30);
+}
+
+.panel-footer{
+  border-top:1px solid var(--stroke);
+  background:rgba(255,255,255,.03);
+}
+.dash-value{
+  font-size:2rem;
+  line-height:1.1;
+  font-weight:600;
+}
+
+.dash-card-title{
+  font-weight:600;
+  font-size:1.05rem;
+}
+
+.dash-tip-icon{
+  color:#F8E620;
+  font-size:1.7rem;
+  line-height:1;
+}
+
+.dash-quote{
+  font-family:"Comfortaa",system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+  opacity:.95;
+}
+
+.dash-list-icon{
+  font-size:1.1rem;
+}
+
+.stat-card,
+.panel-card,
+.section-card{
+  background:var(--card);
+  border:1px solid var(--stroke);
+  border-radius:14px;
+}
+
+.stat-card{display:flex;gap:12px;align-items:flex-start;padding:14px;}
+.stat-ico{width:34px;height:34px;border-radius:12px;display:grid;place-items:center;font-weight:700;}
+.ico-blue{background:rgba(42,108,246,.20);color:#9fc0ff;}
+.ico-purple{background:rgba(142,97,255,.20);color:#cbb6ff;}
+.ico-green{background:rgba(0,184,159,.18);color:#9ff0e4;}
+.ico-orange{background:rgba(255,152,0,.17);color:#ffd49a;}
+.stat-label{font-size:.78rem;color:var(--muted);}
+.stat-value{font-size:1.25rem;font-weight:700;line-height:1.15;}
+.stat-sub{font-size:.78rem;color:var(--muted);}
+
+.panel-card{padding:14px;}
+.panel-title{font-size:1rem;margin-bottom:10px;}
+
+.activity-list{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:10px;}
+.activity-list li{display:flex;align-items:center;gap:10px;color:var(--text);font-size:.92rem;}
+.muted{color:var(--muted);font-size:.82rem;}
+.dot{width:7px;height:7px;border-radius:999px;display:inline-block;}
+.dot-green{background:#00B89F;}
+.dot-blue{background:#2A6CF6;}
+.dot-purple{background:#8e61ff;}
+
+.btn-action{
+  background:rgba(148,163,184,.08);
+  color:var(--text);
+  border:1px solid rgba(148,163,184,.16);
+  border-radius:10px;
+  text-align:left;
+}
+.btn-action:hover{background:rgba(148,163,184,.16);}
+
+.donut-wrap{
+  position:relative;
+  display:grid;
+  place-items:center;
+  min-height:190px;
+}
+
+.donut{
+  width:170px;
+  height:170px;
+  border-radius:999px;
+  background:
+    conic-gradient(var(--teal) 0deg, var(--teal) var(--donut-angle, 140deg), rgba(255,255,255,.10) var(--donut-angle, 140deg), rgba(255,255,255,.10) 360deg);
+  box-shadow:inset 0 0 0 10px rgba(15,23,42,.08);
+  border:1px solid rgba(15,23,42,.12);
+}
+
+.donut::after{
+  content:"";
+  position:absolute;
+  width:120px;
+  height:120px;
+  border-radius:999px;
+  background:var(--card);
+  border:1px solid var(--stroke);
+}
+
+.donut-center{
+  position:absolute;
+  display:grid;
+  place-items:center;
+  gap:2px;
+}
+
+.donut-big{font-size:1.35rem;font-weight:800;line-height:1.1;}
+.donut-small{font-size:.82rem;color:var(--muted);font-family:"Poppins";}
+
+.view-title{margin:0;}
+.view-sub{color:var(--muted);}
+
+
+
+/* Responsive */
+@media (max-width: 767.98px){
+  .sidebar-close{display:inline-flex;}
+  .app-main{width:100%;}
+  .hero-date{max-width:100%;}
+  .day-row{grid-template-columns: 1fr;}
+}
