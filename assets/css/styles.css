@@ -10,16 +10,13 @@
   --text:#F8F8F8;
 }
 
-/* Theme toggle removed: use a single palette. */
 
 *{box-sizing:border-box;}
 
-/* Bootstrap Offcanvas backdrop: reduce page dimming without affecting the panel */
 .offcanvas-backdrop{
   opacity:0 !important;
 }
 
-/* Make sure the offcanvas panel is never visually affected */
 .offcanvas{
   opacity:1 !important;
   filter:none !important;
@@ -33,7 +30,6 @@ html,body{height:100%;}
   font-family:"Poppins",system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
 }
 
-/* Override Bootstrap defaults for dark UI */
 .card,
 .card-body,
 .card-title,
@@ -43,7 +39,6 @@ blockquote{
   color:inherit;
 }
 
-/* Ensure dashboard cards always use light text */
 .dash-card{color:var(--text);}
 
 h1,h2,h3,h4,h5,.modal-title,.view-title,.panel-title,.section-title{
@@ -70,7 +65,6 @@ h1,h2,h3,h4,h5,.modal-title,.view-title,.panel-title,.section-title{
   height:100vh;
 }
 
-/* Bootstrap Offcanvas is hidden by default; keep it always visible on md+ */
 @media (min-width: 768px){
   #sidebar.offcanvas-md{
     position:sticky;
@@ -80,8 +74,6 @@ h1,h2,h3,h4,h5,.modal-title,.view-title,.panel-title,.section-title{
   }
 }
 
-/* When used as an Offcanvas on mobile, Bootstrap controls positioning/backdrop.
-   On md+ this remains a static sidebar inside .app-shell. */
 @media (max-width: 767.98px){
   .app-sidebar{
     position:fixed;
@@ -90,7 +82,6 @@ h1,h2,h3,h4,h5,.modal-title,.view-title,.panel-title,.section-title{
     border-right:1px solid var(--stroke);
   }
 
-  /* Prevent the sidebar itself from looking dim/faded during Offcanvas transitions */
   #sidebar.offcanvas{
     opacity:1 !important;
     filter:none !important;
@@ -309,7 +300,7 @@ h1,h2,h3,h4,h5,.modal-title,.view-title,.panel-title,.section-title{
 .modal-divider-top{border-top:1px solid var(--stroke);padding-top:14px;}
 
 /* Add Overtime modal */
-.ot-modal .modal-header{color:var(--text);} /* gradient comes from panel-header */
+.ot-modal .modal-header{color:var(--text);} 
 .ot-type-btn{
   background:rgba(255,255,255,.04) !important;
   border:2px solid rgba(255,255,255,.08) !important;
@@ -342,7 +333,11 @@ h1,h2,h3,h4,h5,.modal-title,.view-title,.panel-title,.section-title{
   left:50%;
   transform:translate(-50%,-50%);
 }
-.ot-total{display:flex;align-items:center;min-height:44px;}
+.ot-total{
+  display:flex;
+ align-items:center;
+ min-height:44px;
+}
 .ot-summary{
   background:linear-gradient(90deg, rgba(0,184,159,.12), rgba(42,108,246,.12));
   border:1px solid rgba(0,184,159,.30);
