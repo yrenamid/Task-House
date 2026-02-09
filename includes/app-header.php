@@ -1,10 +1,5 @@
 <?php
-/**
- * App header bar (inside <main>)
- * Backend injection points:
- * - $pageTitleText (header title)
- * - $userName / initials
- */
+
 
 $pageTitleText = $pageTitleText ?? 'Welcome';
 $userName = $userName ?? 'John Doe';
