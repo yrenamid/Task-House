@@ -13,12 +13,12 @@
 				<div class="info-box info-box--primary mb-4">
 					<div class="row g-3">
 						<div class="col-12 col-md-6">
-							<div class="text-uppercase" style="letter-spacing:.08em; font-size:.75rem; opacity:.8;">Work Date</div>
+							<div class="text-uppercase app-kicker">Work Date</div>
 							<div class="fw-semibold">—</div>
 						</div>
 						<div class="col-12 col-md-6">
-							<div class="text-uppercase" style="letter-spacing:.08em; font-size:.75rem; opacity:.8;">Scheduled Shift</div>
-							<div class="fw-semibold" style="font-family:Bahnschrift, system-ui;">—</div>
+							<div class="text-uppercase app-kicker">Scheduled Shift</div>
+							<div class="fw-semibold td-number">—</div>
 						</div>
 					</div>
 				</div>
@@ -66,7 +66,7 @@
 					<div class="mt-3">
 						<label class="form-label fw-semibold app-muted">Total Overtime Hours (Auto-calculated)</label>
 						<div class="ot-total control-app rounded-3 px-3 py-2">
-							<div class="fw-bold" style="color: var(--teal); font-family:Bahnschrift, system-ui; font-size:1.2rem;">0h 00m</div>
+							<div class="fw-bold ot-total-value">0h 00m</div>
 						</div>
 					</div>
 				</div>
@@ -75,13 +75,13 @@
 					<label class="form-label fw-semibold app-muted"><i class="bi bi-file-text me-2"></i>Reason for Overtime <span class="text-danger">*</span></label>
 					<textarea rows="4" class="form-control control-app" placeholder="Please provide a detailed reason for the overtime request..."></textarea>
 					<div class="d-flex gap-2 mt-2">
-						<i class="bi bi-exclamation-circle" style="color:rgba(42,108,246,.95);"></i>
+						<i class="bi bi-exclamation-circle ot-hint-ico"></i>
 						<div class="small app-muted">Minimum 20 characters required.</div>
 					</div>
 				</div>
 
 				<div class="ot-summary info-box mb-0">
-					<div class="d-flex align-items-center gap-2 mb-3" style="color:rgba(0,184,159,.95);">
+					<div class="d-flex align-items-center gap-2 mb-3 ot-summary-title">
 						<i class="bi bi-calendar3"></i>
 						<div class="fw-bold">Overtime Summary</div>
 					</div>
@@ -91,11 +91,11 @@
 					</div>
 					<div class="d-flex justify-content-between align-items-center mb-2">
 						<div class="small app-muted">Overtime Time Range:</div>
-						<div class="fw-semibold" style="font-family:Bahnschrift, system-ui;">—</div>
+						<div class="fw-semibold td-number">—</div>
 					</div>
-					<div class="d-flex justify-content-between align-items-center pt-2" style="border-top:1px solid rgba(0,184,159,.30);">
+					<div class="d-flex justify-content-between align-items-center pt-2 ot-summary-divider">
 						<div class="small app-muted">Total Overtime Hours:</div>
-						<div class="fw-bold" style="color: var(--teal); font-family:Bahnschrift, system-ui; font-size:1.1rem;">0h 00m</div>
+						<div class="fw-bold ot-summary-total">0h 00m</div>
 					</div>
 				</div>
 			</div>

@@ -1,6 +1,5 @@
 <?php
 $pageTitle = 'Task House';
-$pageTitleText = 'Welcome';
 $activeNav = 'welcome';
 
 $now = new DateTime('now', new DateTimeZone('Asia/Manila'));

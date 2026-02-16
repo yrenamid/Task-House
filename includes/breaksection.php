@@ -15,7 +15,7 @@
 					<option value="">Choose a break type...</option>
 					<option value="15min">☕ 15 Minutes - Short Break</option>
 					<option value="30min">☕ 30 Minutes - Coffee Break</option>
-					<option value="1hour">🍽️ 1 Hour - Lunch Break</option>
+					<option value="1hour">🍽️ 1 Hour - Lunch Break</option>+
 				</select>
 			</div>
 
