@@ -1,5 +1,4 @@
 <?php
-$pageTitleText = $pageTitleText ?? '';
 $userName = $userName ?? 'John Doe';
 $userInitials = $userInitials ?? 'JD';
 ?>
@@ -16,7 +15,7 @@ $userInitials = $userInitials ?? 'JD';
       <i class="bi bi-list fs-3"></i>
     </button>
 
-    <div class="page-title d-none d-md-block"><?= htmlspecialchars($pageTitleText, ENT_QUOTES, 'UTF-8') ?></div>
+    <div class="page-title d-none d-md-block"></div>
   </div>
 
   <div class="header-right">
