@@ -86,12 +86,29 @@ require __DIR__ . '/includes/header.php';
     <!-- Current Shift Tasks -->
     <div class="card dash-card border-0 shadow-sm mt-4 overflow-hidden">
       <div class="panel-header panel-header--primary px-3 px-md-4 py-3">
-        <div>
-          <div class="d-flex align-items-center gap-2">
-            <i class="bi bi-card-checklist"></i>
-            <div class="fw-semibold">Current Shift Tasks</div>
+        <div class="d-flex justify-content-between align-items-md-center flex-column flex-md-row">
+          <div>
+            <div class="d-flex align-items-center gap-2">
+              <i class="bi bi-card-checklist"></i>
+              <div class="fw-semibold">Current Shift Tasks</div>
+            </div>
+            <div class="tasks-panel-sub">Active tasks assigned for today’s shift</div>
           </div>
-          <div class="tasks-panel-sub">Active tasks assigned for today’s shift</div>
+
+          <!-- Table Search -->
+          <div class="w-100 w-md-auto mt-2 mt-md-0" style="max-width: 220px;">
+            <div class="input-group input-group-sm">
+              <span class="input-group-text bg-dark text-secondary border-secondary">
+                <i class="bi bi-search"></i>
+              </span>
+              <input
+                type="text"
+                class="form-control form-control-sm bg-dark text-light border-secondary"
+                placeholder="Search tasks..."
+                aria-label="Search tasks"
+              />
+            </div>
+          </div>
         </div>
       </div>
 
@@ -99,16 +116,21 @@ require __DIR__ . '/includes/header.php';
         <table class="table table-dark table-hover align-middle mb-0 tasks-table">
           <thead>
             <tr>
-              <th scope="col">Client/Account</th>
+              <th scope="col">Task ID</th>
+              <th scope="col">Deadline</th>
+              <th scope="col">Account</th>
               <th scope="col">Description</th>
               <th scope="col">Approver</th>
               <th scope="col">Status</th>
-              <th scope="col" class="d-none d-md-table-cell">Duration</th>
+              <th scope="col">Billed Hours</th>
+              <th scope="col">Worked Hours</th>
               <th scope="col" class="text-center">Actions</th>
             </tr>
           </thead>
           <tbody>
             <tr>
+              <td class="td-number">TS-001</td>
+              <td class="td-number">2/25/2026</td>
               <td class="fw-semibold">Acme Corporation</td>
               <td><div class="task-desc">Complete Q1 financial review and prepare presentation for stakeholders</div></td>
               <td class="td-muted">Sarah Johnson</td>
@@ -118,7 +140,8 @@ require __DIR__ . '/includes/header.php';
                   <span>Working</span>
                 </span>
               </td>
-              <td class="d-none d-md-table-cell td-number">4h 30m</td>
+              <td class="td-number">4h 30m</td>
+              <td class="td-number">1h 30m</td>
               <td class="text-center">
                 <div class="dropdown">
                   <button class="btn btn-sm btn-outline-light" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Task actions">
@@ -162,6 +185,8 @@ require __DIR__ . '/includes/header.php';
             </tr>
 
             <tr>
+               <td class="td-number">TS-002</td>
+              <td class="td-number">2/30/2026</td>
               <td class="fw-semibold">TechStart Inc.</td>
               <td><div class="task-desc">Develop new feature for mobile application dashboard</div></td>
               <td class="td-muted">Michael Chen</td>
@@ -171,7 +196,8 @@ require __DIR__ . '/includes/header.php';
                   <span>Pending</span>
                 </span>
               </td>
-              <td class="d-none d-md-table-cell td-number">8h 00m</td>
+              <td class="td-number">8h 00m</td>
+              <td class="td-number">4h 10m</td>
               <td class="text-center">
                 <div class="dropdown">
                   <button class="btn btn-sm btn-outline-light" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Task actions">
@@ -215,6 +241,8 @@ require __DIR__ . '/includes/header.php';
             </tr>
 
             <tr>
+               <td class="td-number">TS-003</td>
+              <td class="td-number">2/19/2026</td>
               <td class="fw-semibold">Global Solutions Ltd.</td>
               <td><div class="task-desc">Client meeting and requirements gathering session</div></td>
               <td class="td-muted">Emily Rodriguez</td>
@@ -224,7 +252,8 @@ require __DIR__ . '/includes/header.php';
                   <span>Pending</span>
                 </span>
               </td>
-              <td class="d-none d-md-table-cell td-number">2h 15m</td>
+              <td class="td-number">2h 15m</td>
+              <td class="td-number">25m</td>
               <td class="text-center">
                 <div class="dropdown">
                   <button class="btn btn-sm btn-outline-light" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Task actions">
@@ -278,12 +307,29 @@ require __DIR__ . '/includes/header.php';
     <!-- Completed Tasks -->
     <div class="card dash-card border-0 shadow-sm mt-4 overflow-hidden completed-card">
       <div class="panel-header panel-header--teal px-3 px-md-4 py-3">
-        <div>
-        <div class="d-flex align-items-center gap-2">
+        <div class="d-flex justify-content-between align-items-md-center flex-column flex-md-row">
+          <div>
+            <div class="d-flex align-items-center gap-2">
               <i class="bi bi-check-all"></i>
-            <div class="fw-semibold">Completed Tasks</div>
+              <div class="fw-semibold">Completed Tasks</div>
+            </div>
+            <div class="tasks-panel-sub">Tasks that have been submitted for approval</div>
           </div>
-          <div class="tasks-panel-sub">Tasks that have been submitted for approval</div>
+
+          <!-- Table Search -->
+          <div class="w-100 w-md-auto mt-2 mt-md-0" style="max-width: 220px;">
+            <div class="input-group input-group-sm">
+              <span class="input-group-text bg-dark text-secondary border-secondary">
+                <i class="bi bi-search"></i>
+              </span>
+              <input
+                type="text"
+                class="form-control form-control-sm bg-dark text-light border-secondary"
+                placeholder="Search tasks..."
+                aria-label="Search tasks"
+              />
+            </div>
+          </div>
         </div>
       </div>
     
@@ -329,28 +375,33 @@ require __DIR__ . '/includes/header.php';
             <table class="table table-dark table-hover align-middle mb-0 tasks-table completed-table">
               <thead>
                 <tr>
-                  <th scope="col">Client/Account</th>
+                  <th scope="col">Task ID</th>
+                  <th scope="col">Deadline</th>
+                  <th scope="col">Account</th>
                   <th scope="col">Description</th>
                   <th scope="col">Approver</th>
-                  <th scope="col">Duration</th>
-                  <th scope="col">Submitted On</th>
                   <th scope="col">Status</th>
+                  <th scope="col">Billed Hours</th>
+                  <th scope="col">Submitted on</th>
                   <th scope="col" class="text-center">Actions</th>
                 </tr>
               </thead>
               <tbody>
                 <tr>
+                  <td class="td-number">T-001</td>
+                  <td class="td-number">2/7/2026</td>
                   <td class="fw-semibold">Acme Corporation</td>
                   <td><div class="task-desc td-muted">Q1 Financial Review</div></td>
                   <td class="td-muted">Sarah Johnson</td>
-                  <td class="td-number">04:35</td>
-                  <td class="td-number">Feb 8, 2026 2:30 PM</td>
-                  <td>
+                     <td>
                     <span class="task-badge task-badge--approved">
                       <i class="bi bi-check-circle-fill"></i>
                       <span>Approved</span>
                     </span>
                   </td>
+                  <td class="td-number">04:35</td>
+                  <td class="td-number">Feb 8, 2026 2:30 PM</td>
+               
                   <td class="text-center">
                     <div class="dropdown">
                       <button class="btn btn-sm btn-outline-light" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Completed task actions">
@@ -371,18 +422,19 @@ require __DIR__ . '/includes/header.php';
                 </tr>
 
                 <tr>
+                  <td class="td-number">T-002</td>
+                  <td class="td-number">2/11/2026</td>
                   <td class="fw-semibold">TechStart Inc.</td>
                   <td><div class="task-desc td-muted">Website Redesign Phase 1</div></td>
                   <td class="td-muted">Michael Chen</td>
-                  <td class="td-number">05:20</td>
-                  <td class="td-number">Feb 10, 2026 4:45 PM</td>
-                  
-                  <td>
+                   <td>
                     <span class="task-badge task-badge--approved">
                       <i class="bi bi-check-circle-fill"></i>
                       <span>Approved</span>
                     </span>
                   </td>
+                  <td class="td-number">05:20</td>
+                  <td class="td-number">Feb 10, 2026 4:45 PM</td>
                   <td class="text-center">
                     <div class="dropdown">
                       <button class="btn btn-sm btn-outline-light" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Completed task actions">
@@ -402,17 +454,19 @@ require __DIR__ . '/includes/header.php';
                 </tr>
 
                 <tr>
+                  <td class="td-number">T-003</td>
+                  <td class="td-number">2/12/2026</td>
                   <td class="fw-semibold">GlobalNet Solutions</td>
                   <td><div class="task-desc td-muted">Client Onboarding Documentation</div></td>
                   <td class="td-muted">Emily Rodriguez</td>
-                  <td class="td-number">02:50</td>
-                  <td class="td-number">Feb 11, 2026 10:20 AM</td>
-                  <td>
+                   <td>
                     <span class="task-badge task-badge--approved">
                       <i class="bi bi-check-circle-fill"></i>
                       <span>Approved</span>
                     </span>
                   </td>
+                  <td class="td-number">02:50</td>
+                  <td class="td-number">Feb 11, 2026 10:20 AM</td>
                   <td class="text-center">
                     <div class="dropdown">
                       <button class="btn btn-sm btn-outline-light" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Completed task actions">
@@ -445,29 +499,33 @@ require __DIR__ . '/includes/header.php';
             <table class="table table-dark table-hover align-middle mb-0 tasks-table completed-table">
               <thead>
                 <tr>
-                  <th scope="col">Client/Account</th>
+                  <th scope="col">Task ID</th>
+                  <th scope="col">Deadline</th>
+                  <th scope="col">Account</th>
                   <th scope="col">Description</th>
                   <th scope="col">Approver</th>
-                  <th scope="col">Duration</th>
-                  <th scope="col">Submitted On</th>
                   <th scope="col">Status</th>
+                  <th scope="col">Billed Hours</th>
+                  <th scope="col">Submitted on</th>
                   <th scope="col" class="text-center">Actions</th>
                 </tr>
               </thead>
               
               <tbody>
                 <tr>
+                  <td class="td-number">T-004</td>
+                  <td class="td-number">2/16/2026</td>
                   <td class="fw-semibold">BrightPath Marketing</td>
                   <td><div class="task-desc td-muted">Marketing Campaign Analysis</div></td>
                   <td class="td-muted">James Wilson</td>
-                  <td class="td-number">06:09</td>
-                  <td class="td-number">Feb 12, 2026 9:15 AM</td>
-                  <td>
+                   <td>
                     <span class="task-badge task-badge--approval-pending">
                       <i class="bi bi-clock"></i>
                       <span>Pending</span>
                     </span>
                   </td>
+                  <td class="td-number">06:09</td>
+                  <td class="td-number">Feb 12, 2026 9:15 AM</td>
                   <td class="text-center">
                     <div class="dropdown">
                       <button class="btn btn-sm btn-outline-light" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Completed task actions">
@@ -500,18 +558,19 @@ require __DIR__ . '/includes/header.php';
                 </tr>
 
                 <tr>
+                  <td class="td-number">T-005</td>
+                  <td class="td-number">2/16/2026</td>
                   <td class="fw-semibold">DataFlow Systems</td>
                   <td><div class="task-desc td-muted">Database Migration Testing</div></td>
                   <td class="td-muted">Sarah Johnson</td>
-                  <td class="td-number">07:21</td>
-                  <td class="td-number">Feb 12, 2026 11:00 AM</td>
-                  
-                  <td>
+                   <td>
                     <span class="task-badge task-badge--approval-pending">
                       <i class="bi bi-clock"></i>
                       <span>Pending</span>
                     </span>
                   </td>
+                  <td class="td-number">07:21</td>
+                  <td class="td-number">Feb 12, 2026 11:00 AM</td>
                   <td class="text-center">
                     <div class="dropdown">
                       <button class="btn btn-sm btn-outline-light" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Completed task actions">
@@ -544,17 +603,19 @@ require __DIR__ . '/includes/header.php';
                 </tr>
 
                 <tr>
+                  <td class="td-number">T-006</td>
+                  <td class="td-number">2/16/2026</td>
                   <td class="fw-semibold">SecureTech Inc.</td>
                   <td><div class="task-desc td-muted">Security Audit Report</div></td>
                   <td class="td-muted">Michael Chen</td>
-                  <td class="td-number">05:11</td>
-                  <td class="td-number">Feb 11, 2026 3:30 PM</td>
                   <td>
                     <span class="task-badge task-badge--approval-pending">
                       <i class="bi bi-clock"></i>
                       <span>Pending</span>
                     </span>
                   </td>
+                  <td class="td-number">05:11</td>
+                  <td class="td-number">Feb 11, 2026 3:30 PM</td>
                   <td class="text-center">
                     <div class="dropdown">
                       <button class="btn btn-sm btn-outline-light" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Completed task actions">
