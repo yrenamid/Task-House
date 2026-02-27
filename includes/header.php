@@ -2,6 +2,9 @@
 
 
 $pageTitle = $pageTitle ?? 'Task House';
+$assetBasePath = rtrim((string) ($assetBasePath ?? 'assets'), '/');
+$additionalStylesheets = is_array($additionalStylesheets ?? null) ? $additionalStylesheets : [];
+$bodyClass = trim('app-body ' . (string) ($bodyClass ?? ''));
 
 
 ?><!doctype html>
@@ -20,7 +23,10 @@ $pageTitle = $pageTitle ?? 'Task House';
 
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css" />
 
-  <link rel="stylesheet" href="assets/css/styles.css" />
+  <link rel="stylesheet" href="<?= htmlspecialchars($assetBasePath, ENT_QUOTES, 'UTF-8') ?>/css/styles.css" />
+  <?php foreach ($additionalStylesheets as $stylesheet): ?>
+    <link rel="stylesheet" href="<?= htmlspecialchars($assetBasePath, ENT_QUOTES, 'UTF-8') ?>/<?= htmlspecialchars(ltrim((string) $stylesheet, '/'), ENT_QUOTES, 'UTF-8') ?>" />
+  <?php endforeach; ?>
 </head>
-<body class="app-body">
+<body class="<?= htmlspecialchars($bodyClass, ENT_QUOTES, 'UTF-8') ?>">
   <div class="app-shell">
