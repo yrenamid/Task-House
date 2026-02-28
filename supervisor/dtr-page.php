@@ -41,7 +41,10 @@ $getStatusBadgeClass = static function (string $status): string {
 
 require __DIR__ . '/supervisorIncludes/headerSup.php';
 ?>
-<?php require __DIR__ . '/supervisorIncludes/sidebarSup.php'; ?>
+<?php
+$sidebarBasePath = '../';
+require __DIR__ . '/../includes/sidebar.php';
+?>
 
 <main class="app-main dtr-page">
 	<?php require __DIR__ . '/supervisorIncludes/app-headerSup.php'; ?>

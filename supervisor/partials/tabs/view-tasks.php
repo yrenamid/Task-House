@@ -136,7 +136,7 @@ $getStatusBgClass = function($status) {
 										<span><?= $taskDoer ?></span>
 									<?php endif; ?>
 								</td>
-								<td class="task-col-hours text-end">
+								<td class="task-col-hours text-start">
 									<span class="task-hours-badge"><?= $taskHours ?>h</span>
 								</td>
 								<td class="task-col-status">

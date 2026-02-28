@@ -54,7 +54,10 @@ if ($selectedAccountId !== null) {
 
 require __DIR__ . '/supervisorIncludes/headerSup.php';
 ?>
-<?php require __DIR__ . '/supervisorIncludes/sidebarSup.php'; ?>
+<?php
+$sidebarBasePath = '../';
+require __DIR__ . '/../includes/sidebar.php';
+?>
 
 <main class="app-main accounts-page">
 	<?php require __DIR__ . '/supervisorIncludes/app-headerSup.php'; ?>

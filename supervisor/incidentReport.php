@@ -179,7 +179,10 @@ $getCategoryBadgeClass = static function (string $category): string {
 
 require __DIR__ . '/supervisorIncludes/headerSup.php';
 ?>
-<?php require __DIR__ . '/supervisorIncludes/sidebarSup.php'; ?>
+<?php
+$sidebarBasePath = '../';
+require __DIR__ . '/../includes/sidebar.php';
+?>
 
 <main class="app-main incident-report-page">
 	<?php require __DIR__ . '/supervisorIncludes/app-headerSup.php'; ?>

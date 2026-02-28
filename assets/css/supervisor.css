@@ -2,86 +2,7 @@
 .supervisor-layout{
   --navy-dark:#0f172a;
   --navy-medium:#1e293b;
-  --navy-light:#334155;
   --teal-accent:#14b8a6;
-}
-
-.supervisor-layout .sup-sidebar{
-  padding:0;
-  background:var(--navy-dark) !important;
-  color:var(--text);
-  display:flex;
-  flex-direction:column;
-  overflow:hidden;
-  transition:width .3s ease, flex-basis .3s ease;
-}
-
-.supervisor-layout #sidebar.sup-sidebar,
-.supervisor-layout #sidebar.sup-sidebar.offcanvas,
-.supervisor-layout #sidebar.sup-sidebar.offcanvas-md{
-  background:var(--navy-dark) !important;
-}
-
-.supervisor-layout .sup-sidebar__profile{ border-color:rgba(51,65,85,.7) !important; }
-.supervisor-layout .sup-sidebar__profile-row{ min-width:0; flex:1; }
-
-.supervisor-layout .sup-sidebar__avatar{
-  width:40px;
-  height:40px;
-  border-radius:999px;
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  background:var(--teal-accent);
-  color:#fff;
-  font-weight:600;
-  flex-shrink:0;
-}
-
-.supervisor-layout .sup-sidebar__meta{ min-width:0; }
-.supervisor-layout .sup-sidebar__name{ font-size:.875rem; font-weight:500; }
-.supervisor-layout .sup-sidebar__role{ font-size:.75rem; color:rgba(255,255,255,.65); }
-
-.supervisor-layout .sup-sidebar__nav{
-  flex:1;
-  overflow-y:auto;
-  padding:1rem .75rem;
-  display:flex;
-  flex-direction:column;
-  gap:.35rem;
-}
-
-.supervisor-layout .sup-sidebar__link{
-  display:flex;
-  align-items:center;
-  gap:.75rem;
-  border-radius:.6rem;
-  text-decoration:none;
-  color:rgba(255,255,255,.78);
-  padding:.75rem;
-  transition:background-color .2s ease, color .2s ease;
-}
-
-.supervisor-layout .sup-sidebar__link:hover{ background:var(--navy-medium); color:#fff; }
-.supervisor-layout .sup-sidebar__link.is-active{ background:var(--primary); color:#fff; }
-.supervisor-layout .sup-sidebar__icon{ width:1.25rem; text-align:center; flex-shrink:0; }
-.supervisor-layout .sup-sidebar__label{ font-size:.875rem; white-space:nowrap; }
-.supervisor-layout .sup-sidebar__footer{ border-color:rgba(51,65,85,.7) !important; }
-
-.supervisor-layout .sup-sidebar__toggle{
-  width:100%;
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  color:rgba(255,255,255,.72);
-}
-
-.supervisor-layout .sup-sidebar__toggle:hover{ color:#fff; background:var(--navy-medium); }
-
-.supervisor-layout .sup-sidebar + .app-main .app-header{
-  background:var(--navy-dark);
-  border-bottom-color:rgba(51,65,85,.7);
-  backdrop-filter:none;
 }
 
 .supervisor-layout .task-approvals-page{
@@ -242,8 +163,7 @@
 }
 
 .supervisor-layout .task-approval-mobile-card .fw-semibold,
-.supervisor-layout .task-approval-mobile-card .fw-medium,
-.supervisor-layout .task-approval-mobile-card .task-approval-mobile-value{
+.supervisor-layout .task-approval-mobile-card .fw-medium{
   color:#111827;
 }
 
@@ -257,27 +177,6 @@
 
 .supervisor-layout .task-approval-modal .modal-footer{
   border-top-color:#e5e7eb;
-}
-
-.supervisor-layout .task-approval-modal-field-label{
-  font-size:.76rem;
-  text-transform:uppercase;
-  letter-spacing:.03em;
-  color:#6b7280;
-  margin-bottom:.2rem;
-}
-
-.supervisor-layout .task-approval-modal-field-value{
-  color:#111827;
-  font-weight:500;
-}
-
-.supervisor-layout .task-approval-modal-description{
-  border:1px solid #e5e7eb;
-  border-radius:.75rem;
-  background:#f8fafc;
-  padding:.75rem;
-  color:#111827;
 }
 
 .supervisor-layout .task-approval-modal-subtitle{
@@ -335,12 +234,6 @@
 .supervisor-layout .task-approval-do-over-textarea{
   min-height:120px;
   resize:none;
-}
-
-.supervisor-layout .task-approval-do-over-hint{
-  margin-top:.5rem;
-  font-size:.75rem;
-  color:#6b7280;
 }
 
 .supervisor-layout .task-approval-modal-footer{
@@ -446,7 +339,6 @@
 .supervisor-layout .clock-logs-title{ color:#fff; font-weight:600; font-size:1.5rem; }
 .supervisor-layout .clock-logs-subtitle{ color:rgba(255,255,255,.75); font-size:.92rem; }
 .supervisor-layout .clock-logs-filter-form{ flex-wrap:nowrap; }
-.supervisor-layout .clock-logs-calendar-icon{ color:rgba(255,255,255,.75); font-size:.95rem; }
 .supervisor-layout .clock-logs-date-select{ min-width:180px; background:rgba(255,255,255,.12); border:1px solid rgba(255,255,255,.25); color:#fff; }
 .supervisor-layout .clock-logs-date-select:focus{ border-color:rgba(255,255,255,.5); box-shadow:none; }
 .supervisor-layout .clock-logs-date-select option{ color:#111827; }
@@ -505,23 +397,6 @@
 }
 
 @media (min-width: 768px){
-  .supervisor-layout .sup-sidebar{
-    width:256px;
-    flex:0 0 256px;
-  }
-
-  .supervisor-layout .sup-sidebar.is-collapsed{
-    width:80px;
-    flex-basis:80px;
-  }
-
-  .supervisor-layout .sup-sidebar.is-collapsed .sup-sidebar__meta,
-  .supervisor-layout .sup-sidebar.is-collapsed .sup-sidebar__label{ display:none; }
-
-  .supervisor-layout .sup-sidebar.is-collapsed .sup-sidebar__profile-row,
-  .supervisor-layout .sup-sidebar.is-collapsed .sup-sidebar__link{ justify-content:center; }
-
-  .supervisor-layout .sup-sidebar.is-collapsed .sup-sidebar__link{ padding-inline:.6rem; }
 }
 
 /* [supervisor/incident-report] */
@@ -590,9 +465,7 @@
 .supervisor-layout .accounts-progress{ height:6px; background:#e5e7eb; border-radius:999px; }
 .supervisor-layout .accounts-empty{ padding:2rem; text-align:center; color:#6b7280; }
 .supervisor-layout .project-notes-pane{ flex:1 1 auto; min-width:0; background:#fff; display:flex; flex-direction:column; overflow:hidden; }
-.supervisor-layout .project-notes-empty{ padding:2rem; color:#6b7280; }
 .supervisor-layout .account-details-shell{ min-height:100%; background:#f8f9fa; display:flex; flex-direction:column; }
-.supervisor-layout .account-details-header{ background:linear-gradient(90deg,#1f2a3d,#2a3952); color:#fff; padding:1.5rem; border-bottom:1px solid #3d4d66; }
 .supervisor-layout .account-details-title{ font-size:1.5rem; color:var(--text); font-weight:600; }
 .supervisor-layout .account-details-subtitle{ color:rgba(255,255,255,.85); font-size:.875rem; }
 .supervisor-layout .account-tabs-nav{ background:#fff; border-bottom:1px solid #e5e7eb; padding:0 .75rem; }
@@ -603,11 +476,6 @@
 .supervisor-layout .account-tab-badge{ background:var(--teal); color:#fff; border-radius:999px; font-size:.72rem; line-height:1; padding:.25rem .45rem; min-width:1.3rem; text-align:center; }
 .supervisor-layout .account-tab-content{ flex:1 1 auto; overflow-y:auto; }
 .supervisor-layout .tab-pane-wrap{ min-height:100%; }
-.supervisor-layout .tab-empty-state{ background:#fff; border:1px solid #e5e7eb; border-radius:.5rem; padding:1rem; color:#6b7280; }
-.supervisor-layout .tab-data-card{ border:1px solid #e5e7eb; box-shadow:var(--bs-box-shadow-sm); }
-.supervisor-layout .tab-card-title{ font-size:1rem; font-weight:600; color:#111827; }
-.supervisor-layout .tab-card-meta{ font-size:.875rem; color:#6b7280; }
-.supervisor-layout .task-status-badge{ background:rgba(0,184,159,.12); color:#047857; border-radius:999px; padding:.2rem .55rem; font-size:.75rem; font-weight:600; white-space:nowrap; }
 .supervisor-layout .account-details-empty{ min-height:100%; display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center; padding:2rem; background:#f8f9fa; }
 .supervisor-layout .account-details-empty-icon{ width:4rem; height:4rem; border-radius:999px; background:#e5e7eb; color:#9ca3af; display:inline-flex; align-items:center; justify-content:center; font-size:1.8rem; margin-bottom:1rem; }
 .supervisor-layout .account-details-empty-title{ font-size:1.125rem; color:#111827; margin-bottom:.5rem; }
@@ -663,8 +531,6 @@
 .supervisor-layout .va-summary-title{ font-size:1rem; font-weight:600; color:#111827; margin-bottom:1rem; }
 .supervisor-layout .va-stat-label{ font-size:.875rem; color:#6b7280; margin-bottom:.5rem; }
 .supervisor-layout .va-stat-value{ font-size:1.75rem; font-weight:700; color:#111827; }
-.supervisor-layout .va-stat-working{ color:#10b981 !important; }
-.supervisor-layout .va-stat-idle{ color:#f59e0b !important; }
 .supervisor-layout .va-stat-hours{ color:var(--teal) !important; }
 .supervisor-layout .va-header-controls{ padding:0; }
 .supervisor-layout .va-header-controls .va-tab-title{ margin-bottom:.25rem; }
@@ -738,19 +604,6 @@
 .supervisor-layout .history-task-id { display:inline-block; font-family:'Courier New', monospace; font-size:.8rem; font-weight:700; color:#212529; background-color:#e9ecef; border-radius:.25rem; padding:.2rem .5rem; }
 .supervisor-layout .history-description { max-width:360px; display:-webkit-box; -webkit-line-clamp:2; line-clamp:2; -webkit-box-orient:vertical; overflow:hidden; line-height:1.45; color:#212529; }
 .supervisor-layout .history-hours { font-weight:700; color:#0d6efd; }
-.supervisor-layout .history-stats-row { margin-top:1rem; }
-.supervisor-layout .history-stat-card { border:1px solid; border-radius:.5rem; padding:1.25rem; height:100%; }
-.supervisor-layout .history-stat-label { font-size:.82rem; margin-bottom:.35rem; font-weight:500; }
-.supervisor-layout .history-stat-value { font-size:1.9rem; font-weight:700; line-height:1; }
-.supervisor-layout .history-stat-card-completed { background:linear-gradient(135deg, #f0fff4 0%, #d1fae5 100%); border-color:#86efac; }
-.supervisor-layout .history-stat-card-completed .history-stat-label,
-.supervisor-layout .history-stat-card-completed .history-stat-value { color:#166534; }
-.supervisor-layout .history-stat-card-hours { background:linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%); border-color:#93c5fd; }
-.supervisor-layout .history-stat-card-hours .history-stat-label,
-.supervisor-layout .history-stat-card-hours .history-stat-value { color:#1d4ed8; }
-.supervisor-layout .history-stat-card-average { background:linear-gradient(135deg, #eef2ff 0%, #e0e7ff 100%); border-color:#a5b4fc; }
-.supervisor-layout .history-stat-card-average .history-stat-label,
-.supervisor-layout .history-stat-card-average .history-stat-value { color:#3730a3; }
 
 @media (max-width: 768px) {
   .supervisor-layout .history-table { font-size:.84rem; }
@@ -758,7 +611,6 @@
   .supervisor-layout .history-table tbody td { padding:.6rem; }
   .supervisor-layout .history-col-description { min-width:210px; }
   .supervisor-layout .history-description { max-width:220px; }
-  .supervisor-layout .history-stat-value { font-size:1.6rem; }
 }
 
 @media (max-width: 360px) {
@@ -768,3 +620,556 @@
   .supervisor-layout .history-table thead th,
   .supervisor-layout .history-table tbody td { padding:.45rem; }
 }
+
+/*  Dark theme alignment with employee pages */
+.supervisor-layout .task-approvals-page,
+.supervisor-layout .incident-report-page,
+.supervisor-layout .accounts-page,
+.supervisor-layout .project-notes-pane,
+.supervisor-layout .account-details-shell,
+.supervisor-layout .account-details-empty,
+.supervisor-layout .dtr-page,
+.supervisor-layout .clock-logs-page,
+.supervisor-layout .attendance-records-page{
+  background:var(--bg) !important;
+  color:var(--text);
+}
+
+.supervisor-layout .task-approvals-header,
+.supervisor-layout .dtr-header,
+.supervisor-layout .clock-logs-header,
+.supervisor-layout .incident-report-header{
+  border-color:var(--stroke) !important;
+}
+
+.supervisor-layout .accounts-panel,
+.supervisor-layout .accounts-search-wrap,
+.supervisor-layout .accounts-header,
+.supervisor-layout .accounts-item,
+.supervisor-layout .project-notes-pane,
+.supervisor-layout .account-tabs-nav,
+.supervisor-layout .pn-card,
+.supervisor-layout .pn-card-header,
+.supervisor-layout .pn-notes-box,
+.supervisor-layout .va-card,
+.supervisor-layout .va-empty-card,
+.supervisor-layout .va-summary-card,
+.supervisor-layout .history-table-card,
+.supervisor-layout .task-approvals-card,
+.supervisor-layout .task-approval-mobile-card,
+.supervisor-layout .incident-table-card,
+.supervisor-layout .incident-mobile-card,
+.supervisor-layout .dtr-table-card,
+.supervisor-layout .dtr-mobile-card,
+.supervisor-layout .dtr-mobile-empty,
+.supervisor-layout .clock-logs-table-card,
+.supervisor-layout .clock-logs-mobile-card,
+.supervisor-layout .clock-logs-mobile-empty,
+.supervisor-layout .attendance-records-table-card,
+.supervisor-layout .account-details-empty,
+.supervisor-layout .task-table-container,
+.supervisor-layout .card{
+  background:var(--card) !important;
+  border-color:var(--stroke) !important;
+  color:var(--text);
+}
+
+.supervisor-layout .accounts-item:hover,
+.supervisor-layout .clock-logs-row:hover,
+.supervisor-layout .dtr-row:hover,
+.supervisor-layout .task-table-row:hover,
+.supervisor-layout .history-table-row:hover,
+.supervisor-layout .va-modal-row:hover{
+  background:rgba(255,255,255,.05) !important;
+}
+
+.supervisor-layout .accounts-item.account-selected,
+.supervisor-layout .accounts-item.active{
+  background:rgba(42,108,246,.18) !important;
+  border-left-color:var(--primary) !important;
+}
+
+.supervisor-layout .table,
+.supervisor-layout .task-table,
+.supervisor-layout .history-table,
+.supervisor-layout .incident-table,
+.supervisor-layout .task-approvals-table,
+.supervisor-layout .dtr-table,
+.supervisor-layout .clock-logs-table,
+.supervisor-layout .attendance-table{
+  --bs-table-bg:var(--card);
+  --bs-table-color:var(--text);
+  --bs-table-border-color:var(--stroke);
+  color:var(--text);
+}
+
+.supervisor-layout .table thead th,
+.supervisor-layout .task-table-header th,
+.supervisor-layout .history-table thead th,
+.supervisor-layout .incident-table thead th,
+.supervisor-layout .task-approvals-table thead th,
+.supervisor-layout .dtr-table thead th,
+.supervisor-layout .clock-logs-table thead th,
+.supervisor-layout .attendance-table thead th,
+.supervisor-layout .accounts-header-grid{
+  background:rgba(255,255,255,.04) !important;
+  border-color:var(--stroke) !important;
+  color:var(--text) !important;
+}
+
+.supervisor-layout .table tbody td,
+.supervisor-layout .task-table tbody td,
+.supervisor-layout .history-table tbody td,
+.supervisor-layout .incident-table tbody td,
+.supervisor-layout .task-approvals-table tbody td,
+.supervisor-layout .dtr-table tbody td,
+.supervisor-layout .clock-logs-table tbody td,
+.supervisor-layout .attendance-table tbody td,
+.supervisor-layout .list-group-item{
+  border-color:var(--stroke) !important;
+  color:rgba(255,255,255,.90) !important;
+}
+
+.supervisor-layout .table-striped > tbody > tr:nth-of-type(odd) > *{
+  --bs-table-accent-bg:rgba(255,255,255,.02);
+  color:var(--text);
+}
+
+.supervisor-layout .form-control,
+.supervisor-layout .form-select,
+.supervisor-layout .input-group-text,
+.supervisor-layout textarea,
+.supervisor-layout input[type="date"],
+.supervisor-layout input[type="text"],
+.supervisor-layout input[type="number"],
+.supervisor-layout input[type="file"],
+.supervisor-layout select{
+  background:rgba(255,255,255,.04) !important;
+  border-color:var(--stroke) !important;
+  color:var(--text) !important;
+}
+
+.supervisor-layout .form-control::placeholder,
+.supervisor-layout textarea::placeholder{
+  color:rgba(255,255,255,.58) !important;
+}
+
+.supervisor-layout .form-control:focus,
+.supervisor-layout .form-select:focus,
+.supervisor-layout textarea:focus,
+.supervisor-layout input:focus,
+.supervisor-layout select:focus{
+  background:rgba(255,255,255,.06) !important;
+  border-color:var(--primary) !important;
+  box-shadow:0 0 0 .2rem rgba(42,108,246,.18) !important;
+  color:var(--text) !important;
+}
+
+.supervisor-layout .form-control:disabled,
+.supervisor-layout .form-select:disabled,
+.supervisor-layout input:disabled,
+.supervisor-layout textarea:disabled{
+  background:rgba(255,255,255,.02) !important;
+  color:rgba(255,255,255,.55) !important;
+}
+
+.supervisor-layout .form-label,
+.supervisor-layout .form-text,
+.supervisor-layout .small,
+.supervisor-layout .text-muted,
+.supervisor-layout .task-tab-subtitle,
+.supervisor-layout .history-subtitle,
+.supervisor-layout .incident-report-subtitle,
+.supervisor-layout .task-approvals-subtitle,
+.supervisor-layout .dtr-subtitle,
+.supervisor-layout .clock-logs-subtitle,
+.supervisor-layout .accounts-client,
+.supervisor-layout .accounts-allocated,
+.supervisor-layout .pn-label,
+.supervisor-layout .pn-mini-label,
+.supervisor-layout .va-id,
+.supervisor-layout .va-info-label,
+.supervisor-layout .clock-logs-mobile-date,
+.supervisor-layout .clock-logs-mobile-time-label,
+.supervisor-layout .account-details-empty-text,
+.supervisor-layout .task-approval-modal-subtitle,
+.supervisor-layout .task-approval-input-hint{
+  color:var(--muted) !important;
+}
+
+.supervisor-layout .task-approvals-title,
+.supervisor-layout .incident-report-title,
+.supervisor-layout .dtr-title,
+.supervisor-layout .clock-logs-title,
+.supervisor-layout .account-details-title,
+.supervisor-layout .account-details-empty-title,
+.supervisor-layout .task-tab-title,
+.supervisor-layout .history-title,
+.supervisor-layout .va-tab-title,
+.supervisor-layout .pn-card-title,
+.supervisor-layout .pn-value,
+.supervisor-layout .pn-value-sm,
+.supervisor-layout .pn-mini-value,
+.supervisor-layout .pn-notes-text,
+.supervisor-layout .va-name,
+.supervisor-layout .va-info-value,
+.supervisor-layout .va-summary-title,
+.supervisor-layout .va-stat-value,
+.supervisor-layout .accounts-name,
+.supervisor-layout .clock-logs-mobile-name,
+.supervisor-layout .clock-logs-mobile-time-value,
+.supervisor-layout .history-description,
+.supervisor-layout .history-task-id,
+.supervisor-layout .history-hours,
+.supervisor-layout .task-modal-title,
+.supervisor-layout .task-modal-section-title,
+.supervisor-layout .task-modal-field-value,
+.supervisor-layout .task-modal-description-text,
+.supervisor-layout .task-modal-instructions-text,
+.supervisor-layout .task-modal-notes-text,
+.supervisor-layout .task-modal-attachment-name,
+.supervisor-layout .task-modal-history-action,
+.supervisor-layout .task-modal-history-user,
+.supervisor-layout .task-modal-history-timestamp,
+.supervisor-layout .task-modal-empty-text,
+.supervisor-layout .task-modal-id,
+.supervisor-layout .task-modal-id span,
+.supervisor-layout .task-modal-field-label,
+.supervisor-layout .task-modal-attachment-action,
+.supervisor-layout .task-modal-notes-title,
+.supervisor-layout .task-modal-empty-icon{
+  color:var(--text) !important;
+}
+
+.supervisor-layout .dropdown-menu{
+  background:var(--card) !important;
+  border:1px solid var(--stroke) !important;
+}
+
+.supervisor-layout .dropdown-item,
+.supervisor-layout .dropdown-item.text-danger{
+  color:var(--text) !important;
+}
+
+.supervisor-layout .dropdown-item:hover,
+.supervisor-layout .dropdown-item:focus{
+  background:rgba(255,255,255,.08) !important;
+}
+
+.supervisor-layout .dropdown-divider{
+  border-top-color:var(--stroke) !important;
+}
+
+.supervisor-layout .modal-content,
+.supervisor-layout .task-modal-content,
+.supervisor-layout .task-approval-modal,
+.supervisor-layout .modal-app{
+  background:var(--card) !important;
+  border:1px solid var(--stroke) !important;
+  color:var(--text) !important;
+}
+
+.supervisor-layout .modal-header,
+.supervisor-layout .task-modal-header,
+.supervisor-layout .modal-footer,
+.supervisor-layout .task-modal-tabs,
+.supervisor-layout .task-modal-footer,
+.supervisor-layout .task-approval-modal .modal-header,
+.supervisor-layout .task-approval-modal .modal-footer{
+  border-color:var(--stroke) !important;
+}
+
+.supervisor-layout .modal .btn-close{
+  filter:invert(1) grayscale(100%) brightness(220%);
+}
+
+.supervisor-layout .task-modal-header,
+.supervisor-layout .task-modal-body,
+.supervisor-layout .task-modal-tabs,
+.supervisor-layout .task-modal-field-card,
+.supervisor-layout .task-modal-description-box,
+.supervisor-layout .task-modal-attachment-item,
+.supervisor-layout .task-modal-history-card,
+.supervisor-layout .task-modal-instructions-box,
+.supervisor-layout .task-modal-instructions-header,
+.supervisor-layout .task-modal-notes-box{
+  background:rgba(255,255,255,.03) !important;
+  border-color:var(--stroke) !important;
+}
+
+.supervisor-layout .task-modal-tab-btn{ color:var(--muted) !important; }
+.supervisor-layout .task-modal-tab-btn.active{ color:var(--primary) !important; border-bottom-color:var(--primary) !important; }
+.supervisor-layout .task-modal-tab-btn:hover{ color:var(--text) !important; border-bottom-color:var(--stroke) !important; }
+
+.supervisor-layout .alert{
+  border:1px solid var(--stroke);
+  color:var(--text);
+}
+
+.supervisor-layout .alert-success{
+  background:rgba(34,197,94,.14);
+  border-color:rgba(34,197,94,.38);
+}
+
+.supervisor-layout .alert-danger{
+  background:rgba(239,68,68,.14);
+  border-color:rgba(239,68,68,.38);
+}
+
+.supervisor-layout .alert-info{
+  background:rgba(42,108,246,.16);
+  border-color:rgba(42,108,246,.36);
+}
+
+.supervisor-layout .pagination .page-link{
+  background:var(--card);
+  border-color:var(--stroke);
+  color:var(--text);
+}
+
+.supervisor-layout .pagination .page-link:hover,
+.supervisor-layout .pagination .page-item.active .page-link{
+  background:rgba(42,108,246,.2);
+  border-color:rgba(42,108,246,.45);
+  color:#fff;
+}
+
+.supervisor-layout .btn-outline-secondary,
+.supervisor-layout .btn-outline-primary,
+.supervisor-layout .btn-outline-danger,
+.supervisor-layout .task-approvals-action-btn,
+.supervisor-layout .clock-logs-back-btn,
+.supervisor-layout .dtr-attendance-btn,
+.supervisor-layout .btn-light,
+.supervisor-layout .btn-secondary{
+  background:rgba(255,255,255,.04) !important;
+  border-color:var(--stroke) !important;
+  color:var(--text) !important;
+}
+
+.supervisor-layout .btn-outline-secondary:hover,
+.supervisor-layout .btn-outline-primary:hover,
+.supervisor-layout .btn-outline-danger:hover,
+.supervisor-layout .task-approvals-action-btn:hover,
+.supervisor-layout .clock-logs-back-btn:hover,
+.supervisor-layout .dtr-attendance-btn:hover,
+.supervisor-layout .btn-light:hover,
+.supervisor-layout .btn-secondary:hover{
+  background:rgba(255,255,255,.1) !important;
+  border-color:rgba(255,255,255,.2) !important;
+  color:var(--text) !important;
+}
+
+.supervisor-layout .dtr-clocklogs-btn,
+.supervisor-layout .incident-add-btn,
+.supervisor-layout .incident-submit-btn,
+.supervisor-layout .btn-primary{
+  background:var(--primary);
+  border-color:var(--primary);
+  color:#fff;
+}
+
+.supervisor-layout .dtr-clocklogs-btn:hover,
+.supervisor-layout .incident-add-btn:hover,
+.supervisor-layout .incident-submit-btn:hover,
+.supervisor-layout .btn-primary:hover{
+  background:color-mix(in srgb, var(--primary) 84%, black);
+  border-color:color-mix(in srgb, var(--primary) 84%, black);
+  color:#fff;
+}
+
+.supervisor-layout .account-tabs-nav,
+.supervisor-layout .account-tab-link{ background:var(--card) !important; }
+.supervisor-layout .account-tab-link{ color:var(--muted) !important; }
+.supervisor-layout .account-tab-link.active{
+  color:var(--text) !important;
+  border-bottom-color:var(--primary) !important;
+}
+
+.supervisor-layout .sidebar-link.is-active,
+.supervisor-layout .sidebar-sub-link.is-active{
+  background:rgba(42,108,246,.3) !important;
+  color:#fff !important;
+}
+
+.supervisor-layout .accounts-progress,
+.supervisor-layout .pn-usage-progress,
+.supervisor-layout .pn-usage-progress::-webkit-progress-bar{
+  background:rgba(255,255,255,.08) !important;
+}
+
+.supervisor-layout .accounts-progress .progress-bar,
+.supervisor-layout .pn-usage-progress::-webkit-progress-value,
+.supervisor-layout .pn-usage-progress::-moz-progress-bar{
+  background:var(--primary) !important;
+}
+
+.supervisor-layout .task-empty-state,
+.supervisor-layout .task-modal-empty-state{
+  background:rgba(255,255,255,.02) !important;
+  border-color:var(--stroke) !important;
+}
+
+.supervisor-layout .task-empty-text,
+.supervisor-layout .task-doer-unassigned,
+.supervisor-layout .task-modal-value,
+.supervisor-layout .task-modal-label,
+.supervisor-layout .task-modal-id,
+.supervisor-layout .task-modal-history-user,
+.supervisor-layout .task-modal-history-timestamp{
+  color:var(--muted) !important;
+}
+
+.supervisor-layout .task-id-badge,
+.supervisor-layout .history-task-id{
+  background:rgba(255,255,255,.1) !important;
+  border:1px solid var(--stroke);
+  color:var(--text) !important;
+}
+
+.supervisor-layout .task-description-text,
+.supervisor-layout .task-modal-field-value,
+.supervisor-layout .task-modal-description-text,
+.supervisor-layout .task-modal-instructions-text,
+.supervisor-layout .task-modal-notes-text,
+.supervisor-layout .task-modal-attachment-name,
+.supervisor-layout .task-modal-history-action,
+.supervisor-layout .task-modal-title,
+.supervisor-layout .task-modal-section-title{
+  color:var(--text) !important;
+}
+
+.supervisor-layout .task-hours-badge{
+  background:rgba(42,108,246,.18) !important;
+  color:#b7c8ff !important;
+  border:1px solid rgba(42,108,246,.35);
+}
+
+.supervisor-layout .task-table thead,
+.supervisor-layout .task-table-header th,
+.supervisor-layout .task-table-row,
+.supervisor-layout .task-table-row:hover{
+  background:transparent !important;
+  border-color:var(--stroke) !important;
+}
+
+.supervisor-layout .task-modal-tab-content .bg-light,
+.supervisor-layout .task-modal-tab-content .bg-white,
+.supervisor-layout .task-modal-description-box .bg-light,
+.supervisor-layout .task-modal-instructions-content .bg-white,
+.supervisor-layout .task-modal-tab-content .border.rounded{
+  background:rgba(255,255,255,.03) !important;
+  border-color:var(--stroke) !important;
+  color:var(--text) !important;
+}
+
+.supervisor-layout .task-modal-timeline::before{
+  background:var(--stroke) !important;
+}
+
+.supervisor-layout .task-modal-timeline-dot{
+  border-color:var(--card) !important;
+  box-shadow:0 0 0 2px var(--stroke) !important;
+}
+
+.supervisor-layout .task-dropdown-danger:hover{
+  background:rgba(239,68,68,.16) !important;
+  color:#ffb6be !important;
+}
+
+.supervisor-layout select option,
+.supervisor-layout .form-select option{
+  background:#0f172a;
+  color:#f8f8f8;
+}
+
+/* [overrides] contrast issues */
+.supervisor-layout .task-approvals-header{
+  background:var(--card) !important;
+}*/
+
+.supervisor-layout .task-approvals-title{
+  color:var(--text) !important;
+}
+
+.supervisor-layout .task-approvals-subtitle{
+  color:var(--muted) !important;
+}
+
+.supervisor-layout .pn-mini-box,
+.supervisor-layout .pn-mini-box-muted,
+.supervisor-layout .pn-mini-box-accent{
+  background:rgba(255,255,255,.04) !important;
+  border:1px solid var(--stroke);
+}
+
+.supervisor-layout .pn-mini-label,
+.supervisor-layout .pn-mini-value,
+.supervisor-layout .pn-value{
+  color:var(--text) !important;
+}
+
+.supervisor-layout .task-col-action .btn,
+.supervisor-layout .task-col-action .btn-link,
+.supervisor-layout .task-col-action .bi,
+.supervisor-layout .task-col-action .btn-link.text-dark{
+  color:var(--text) !important;
+}
+
+.supervisor-layout .task-col-action .btn:hover,
+.supervisor-layout .task-col-action .btn-link:hover{
+  color:#fff !important;
+}
+
+.supervisor-layout .modal-footer.task-modal-footer,
+.supervisor-layout .task-modal-footer{
+  background:var(--card) !important;
+  border-top:1px solid var(--stroke) !important;
+}
+
+.supervisor-layout .va-info-box{
+  background:rgba(255,255,255,.04) !important;
+  border:1px solid var(--stroke);
+}
+
+.supervisor-layout .task-approval-note{
+  background:rgba(248,230,32,.16) !important;
+  border-color:rgba(248,230,32,.38) !important;
+  color:#f8e620 !important;
+}
+
+.supervisor-layout .task-approval-note p,
+.supervisor-layout .task-approval-note i{
+  color:#f8e620 !important;
+}
+
+.supervisor-layout .task-approval-badge-pending,
+.supervisor-layout .task-modal-badge-approval{
+  background:rgba(248,230,32,.18) !important;
+  border-color:rgba(248,230,32,.38) !important;
+  color:#f8e620 !important;
+}
+
+/* [overrides] Add VA modal list dark theme */
+.supervisor-layout #addVaModal .va-modal-list,
+.supervisor-layout #addVaModal .va-modal-list .list-group,
+.supervisor-layout #addVaModal .va-modal-list .list-group-flush{
+  background:var(--card) !important;
+  border-color:var(--stroke) !important;
+}
+
+.supervisor-layout #addVaModal .va-modal-row,
+.supervisor-layout #addVaModal .va-modal-list .list-group-item{
+  background:rgba(255,255,255,.03) !important;
+  border-color:var(--stroke) !important;
+  color:var(--text) !important;
+}
+
+.supervisor-layout #addVaModal .va-modal-row:hover,
+.supervisor-layout #addVaModal .va-modal-list .list-group-item:hover{
+  background:rgba(255,255,255,.08) !important;
+}
+
+.supervisor-layout #addVaModal .va-modal-name{ color:var(--text) !important; }
+.supervisor-layout #addVaModal .va-modal-email,
+.supervisor-layout #addVaModal .va-modal-email.text-muted{ color:var(--muted) !important; }
