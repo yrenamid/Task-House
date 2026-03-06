@@ -2,9 +2,13 @@
 
 
 $pageTitle = $pageTitle ?? 'Task House';
-$assetBasePath = rtrim((string) ($assetBasePath ?? 'assets'), '/');
-$additionalStylesheets = is_array($additionalStylesheets ?? null) ? $additionalStylesheets : [];
-$bodyClass = trim('app-body ' . (string) ($bodyClass ?? ''));
+$assetBasePath = $assetBasePath ?? 'assets';
+$additionalStylesheets = $additionalStylesheets ?? [];
+$bodyClass = $bodyClass ?? '';
+
+$assetBasePath = rtrim((string) $assetBasePath, '/');
+$additionalStylesheets = is_array($additionalStylesheets) ? $additionalStylesheets : [];
+$bodyClass = trim('app-body ' . (string) $bodyClass);
 
 
 ?><!doctype html>

@@ -2,6 +2,8 @@
 :root{
   --primary:#2A6CF6;
   --teal:#00B89F;
+  --teal-primary:#00B89F;
+  --teal-accent:#14b8a6;
   --work:#2A6CF6;
   --rest:#d5d9e0;
   --bg:#243040;
@@ -134,7 +136,9 @@ h1,h2,h3,h4,h5,.modal-title{
   color:var(--text);
   display:flex;
   flex-direction:column;
-  overflow:hidden;
+  overflow-y:auto;
+  overflow-x:hidden;
+  min-height:0;
   transition:width .3s ease, flex-basis .3s ease;
 }
 
@@ -166,7 +170,9 @@ h1,h2,h3,h4,h5,.modal-title{
 
 .sidebar-nav{
   flex:1;
-  overflow-y:auto;
+  min-height:0;
+  overflow:visible;
+  -webkit-overflow-scrolling:touch;
   padding:1rem .75rem;
   display:flex;
   flex-direction:column;

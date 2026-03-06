@@ -1,8 +1,4 @@
 <?php
-/**
- * Virtual Assistants Tab View
- * Displays list of VAs assigned to account with status, hours, and action buttons
- */
 
 $vas = $accountVirtualAssistants ?? [];
 $vaCount = count($vas);
@@ -119,9 +115,9 @@ $unassignedVAs = array_values($unassignedVAs);
 				$initials = $getInitials($va['name']);
 				$modalId = 'removeVaModal_' . htmlspecialchars($va['id'], ENT_QUOTES, 'UTF-8');
 				?>
-				<div class="col-12 col-md-6 col-lg-4">
+				<div class="col-12 col-md-6 col-xxl-4">
 					<div class="card va-card h-100">
-						<div class="card-body p-4">
+						<div class="card-body p-3 p-xxl-4">
 							<!-- VA Header -->
 							<div class="d-flex align-items-start justify-content-between mb-4">
 								<div class="d-flex align-items-center gap-3 min-w-0">

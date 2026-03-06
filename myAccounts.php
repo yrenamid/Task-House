@@ -52,15 +52,18 @@ if ($selectedAccountId !== null) {
 	$accountCompletedTasks = array_values(array_filter($completedTasks, static fn(array $history): bool => $history['accountId'] === $selectedAccountId));
 }
 
-require __DIR__ . '/supervisorIncludes/headerSup.php';
+$assetBasePath = 'assets';
+$additionalStylesheets = ['css/supervisor.css'];
+$bodyClass = 'supervisor-layout';
+require __DIR__ . '/includes/header.php';
 ?>
 <?php
 $sidebarBasePath = '../';
-require __DIR__ . '/../includes/sidebar.php';
+require __DIR__ . '/includes/sidebar.php';
 ?>
 
 <main class="app-main accounts-page">
-	<?php require __DIR__ . '/supervisorIncludes/app-headerSup.php'; ?>
+	<?php require __DIR__ . '/includes/app-header.php'; ?>
 
 	<div class="container-fluid px-3 px-md-0 overflow-hidden">
 		<div class="row g-0 vh-100 accounts-layout accounts-content-row flex-nowrap">
@@ -200,7 +203,9 @@ require __DIR__ . '/../includes/sidebar.php';
 						<?php elseif ($activeTab === 'view-vas'): ?>
 							<?php require __DIR__ . '/partials/tabs/view-va.php'; ?>
 						<?php else: ?>
+							<?php $historyAllowDeleteAction = false; ?>
 							<?php require __DIR__ . '/partials/tabs/history-tab.php'; ?>
+							<?php unset($historyAllowDeleteAction); ?>
 						<?php endif; ?>
 					</div>
 				</div>
@@ -216,4 +221,4 @@ require __DIR__ . '/../includes/sidebar.php';
 	</div>
 </main>
 
-<?php require __DIR__ . '/supervisorIncludes/footerSup.php'; ?>
+<?php require __DIR__ . '/includes/footer.php'; ?>

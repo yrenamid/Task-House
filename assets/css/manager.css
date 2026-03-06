@@ -1,0 +1,926 @@
+.manager-layout .manager-department-page{
+	background:#0f172a;
+	min-height:100vh;
+}
+
+.manager-layout .manager-panel-card,
+.manager-layout .manager-account-summary-card,
+.manager-layout .manager-tab-card{
+	background:#111827;
+	border:1px solid rgba(148,163,184,.2) !important;
+	color:#e5e7eb;
+}
+
+.manager-layout .manager-header-section{
+	background:transparent;
+	border:0;
+	color:#e5e7eb;
+}
+
+.manager-layout .manager-header-content{
+	padding:0;
+}
+
+.manager-layout .manager-page-title{
+	color:#f9fafb;
+	font-size:1.5rem;
+	font-weight:600;
+}
+
+.manager-layout .manager-page-subtitle{
+	color:#9ca3af;
+}
+
+.manager-layout .manager-balance-btn{
+	background:#14b8a6;
+	border:1px solid #14b8a6;
+	color:#ffffff;
+	font-weight:500;
+}
+
+.manager-layout .manager-balance-btn:hover,
+.manager-layout .manager-balance-btn:focus{
+	background:#0f9f90;
+	border-color:#0f9f90;
+	color:#ffffff;
+}
+
+.manager-layout .manager-panel-header{
+	background:#0b1220;
+	color:#f3f4f6;
+}
+
+.manager-layout .manager-panel-header .text-muted{
+	color:#9ca3af !important;
+}
+
+.manager-layout .manager-accordion-item{
+	background:transparent;
+	border:0;
+	border-bottom:1px solid rgba(51,65,85,.65);
+	border-radius:0;
+	box-shadow:none;
+	overflow:hidden;
+	margin-bottom:0;
+}
+
+.manager-layout .manager-accordion-item:first-child{
+	border-top:1px solid rgba(51,65,85,.65);
+}
+
+.manager-layout .manager-accordion-button{
+	background:#0b1220;
+	color:#f3f4f6;
+	box-shadow:none;
+	font-weight:600;
+	padding:.8rem 1rem;
+	border-left:0;
+	border-bottom:0;
+	border-radius:0 !important;
+	transition:background-color .2s ease, color .2s ease;
+}
+
+.manager-layout .manager-supervisor-row-button{
+	background:#0b1220 !important;
+}
+
+.manager-layout .manager-accordion-button:not(.collapsed){
+	background:#0b1220;
+	color:#ffffff;
+	box-shadow:none;
+}
+
+.manager-layout .manager-supervisor-row-button:not(.collapsed){
+	background:#0b1220 !important;
+}
+
+.manager-layout .manager-accordion-button::after{
+	filter:brightness(0) invert(1);
+	opacity:.85;
+	margin-left:.5rem;
+	transition:transform .2s ease, opacity .2s ease;
+}
+
+.manager-layout .manager-accordion-button:not(.collapsed)::after{
+	transform:rotate(180deg);
+	opacity:1;
+}
+
+.manager-layout .manager-accordion-button:hover{
+	background:#0f172a;
+	color:#ffffff;
+}
+
+.manager-layout .manager-supervisor-row-button:hover{
+	background:#0f172a !important;
+}
+
+.manager-layout .manager-supervisor-row-content{
+	display:flex;
+	justify-content:space-between;
+	align-items:flex-start;
+	gap:.75rem;
+	width:100%;
+	padding-right:.75rem;
+}
+
+.manager-layout .manager-supervisor-row-details{
+	min-width:0;
+}
+
+.manager-layout .manager-supervisor-row-meta{
+	text-align:right;
+	min-width:82px;
+}
+
+.manager-layout .manager-accordion-button .accounts-name{
+	color:#f8fafc;
+	font-size:.875rem;
+	font-weight:700;
+}
+
+.manager-layout .manager-accordion-button .accounts-client,
+.manager-layout .manager-accordion-button .accounts-allocated{
+	color:#94a3b8;
+	font-size:.75rem;
+}
+
+.manager-layout .manager-accordion-button .accounts-available{
+	color:#2dd4bf;
+	font-size:.875rem;
+	font-weight:700;
+}
+
+.manager-layout .manager-supervisor-progress{
+	height:6px;
+	margin-top:.5rem;
+}
+
+.manager-layout .manager-accounts-dropdown .accounts-header{
+	background:#0f1b31;
+	border-color:rgba(148,163,184,.25) !important;
+	padding:.75rem 1rem;
+}
+
+.manager-layout .manager-accounts-dropdown{
+	background:#122036;
+	border-top:1px solid rgba(148,163,184,.3);
+	box-shadow:inset 0 1px 0 rgba(255,255,255,.03);
+}
+
+.manager-layout .manager-accounts-dropdown .accounts-header-grid{
+	font-size:.75rem;
+	font-weight:600;
+	color:#94a3b8;
+}
+
+.manager-layout .manager-accounts-dropdown .accounts-list{
+	max-height:340px;
+	padding-left:.5rem;
+	border-left:2px solid rgba(56,189,248,.18);
+}
+
+.manager-layout .manager-accounts-dropdown .list-group{
+	border-radius:0;
+}
+
+.manager-layout .manager-accounts-dropdown .accounts-item{
+	background:#14253f;
+	border-bottom:1px solid rgba(148,163,184,.15) !important;
+	border-left:4px solid transparent;
+	color:#e5e7eb;
+	border-radius:0 !important;
+}
+
+.manager-layout .manager-accounts-dropdown .accounts-item:hover{
+	background:#1a2d4a;
+	color:#ffffff;
+}
+
+.manager-layout .manager-accounts-dropdown .accounts-item.account-selected,
+.manager-layout .manager-accounts-dropdown .accounts-item.active{
+	background:rgba(20,184,166,.14);
+	border-left-color:#14b8a6;
+}
+
+.manager-layout .manager-accounts-dropdown .accounts-name{
+	color:#f8fafc;
+}
+
+.manager-layout .manager-accounts-dropdown .accounts-client,
+.manager-layout .manager-accounts-dropdown .accounts-allocated{
+	color:#94a3b8 !important;
+}
+
+.manager-layout .manager-accounts-dropdown .accounts-available{
+	color:#2dd4bf;
+}
+
+.manager-layout .manager-accounts-dropdown .accounts-progress{
+	background:#334155;
+}
+
+.manager-layout .manager-account-table{
+	--bs-table-bg:#0f172a;
+	--bs-table-color:#e5e7eb;
+	--bs-table-border-color:rgba(148,163,184,.2);
+	margin-bottom:0;
+}
+
+.manager-layout .manager-account-table thead th{
+	background:#1f2937;
+	color:#cbd5e1;
+	font-size:.74rem;
+	text-transform:uppercase;
+	letter-spacing:.03em;
+	border-bottom:1px solid rgba(148,163,184,.25);
+}
+
+.manager-layout .manager-account-row{
+	transition:background-color .2s ease;
+}
+
+.manager-layout .manager-account-row:hover{
+	background:rgba(30,41,59,.7);
+}
+
+.manager-layout .manager-account-row.active{
+	background:rgba(20,184,166,.18);
+}
+
+.manager-layout .manager-account-row.active td{
+	border-color:rgba(20,184,166,.35);
+}
+
+.manager-layout .manager-account-cell-link{
+	display:block;
+	color:#e5e7eb;
+	text-decoration:none;
+	padding:.6rem .2rem;
+	width:100%;
+}
+
+.manager-layout .manager-account-row.active .manager-account-cell-link{
+	color:#ccfbf1;
+	font-weight:500;
+}
+
+.manager-layout .account-tabs-list{
+	border-bottom-color:rgba(148,163,184,.25);
+}
+
+.manager-layout .account-tab-link{
+	color:#cbd5e1;
+	background:#0f172a;
+	border-color:rgba(148,163,184,.22) rgba(148,163,184,.22) transparent;
+}
+
+.manager-layout .account-tab-link:hover{
+	color:#ffffff;
+	background:#1e293b;
+	border-color:rgba(148,163,184,.3) rgba(148,163,184,.3) transparent;
+}
+
+.manager-layout .account-tab-link.active{
+	color:#ffffff;
+	background:#1f2937;
+	border-color:rgba(148,163,184,.28) rgba(148,163,184,.28) #1f2937;
+}
+
+.manager-layout .manager-tab-content .card-header{
+	background:#0b1220;
+	color:#f3f4f6;
+	font-weight:600;
+}
+
+.manager-layout .manager-tab-content .card-body{
+	color:#d1d5db;
+}
+
+.manager-layout .manager-tab-table{
+	--bs-table-bg:#111827;
+	--bs-table-striped-bg:#0f172a;
+	--bs-table-hover-bg:#1f2937;
+	--bs-table-color:#e5e7eb;
+	--bs-table-border-color:rgba(148,163,184,.2);
+}
+
+.manager-layout .manager-tab-table thead th{
+	color:#cbd5e1;
+	font-size:.75rem;
+	text-transform:uppercase;
+	letter-spacing:.03em;
+}
+
+.manager-layout .account-details-title{
+	color:#f8fafc;
+}
+
+.manager-layout .account-details-subtitle{
+	color:#cbd5e1;
+}
+
+.manager-layout .manager-account-balance-page{
+	color:#e5e7eb;
+}
+
+.manager-layout .manager-account-balance-header{
+	background:#111827;
+	border:1px solid rgba(148,163,184,.2);
+	border-radius:.75rem;
+	padding:1rem;
+}
+
+.manager-layout .manager-account-balance-title{
+	color:#f8fafc;
+	font-size:1.25rem;
+	font-weight:600;
+}
+
+.manager-layout .manager-account-balance-subtitle{
+	color:#94a3b8;
+	font-size:.875rem;
+}
+
+.manager-layout .manager-account-balance-search-wrap{
+	width:100%;
+	max-width:320px;
+}
+
+.manager-layout .manager-account-balance-search-group .input-group-text{
+	background:#0f172a;
+	border-color:rgba(148,163,184,.35);
+	color:#94a3b8;
+}
+
+.manager-layout .manager-account-balance-search-group .form-control{
+	background:#0f172a;
+	border-color:rgba(148,163,184,.35);
+	color:#e5e7eb;
+}
+
+.manager-layout .va-utilization-page .va-filter-select{
+	min-width:132px;
+	background:#0f172a;
+	border:1px solid rgba(148,163,184,.35);
+	color:#e5e7eb;
+}
+
+.manager-layout .va-utilization-page .va-filter-select:focus{
+	background:#0f172a;
+	color:#e5e7eb;
+	border-color:#2A6CF6;
+	box-shadow:0 0 0 .2rem rgba(42,108,246,.25);
+}
+
+.manager-layout .va-utilization-page .va-billing-group .btn{
+	border-color:rgba(148,163,184,.35);
+}
+
+.manager-layout .va-utilization-page .va-billing-group .btn-outline-secondary{
+	color:#cbd5e1;
+	background:#0f172a;
+}
+
+.manager-layout .va-utilization-page .va-billing-group .btn-outline-secondary:hover{
+	color:#ffffff;
+	background:#1e293b;
+	border-color:rgba(148,163,184,.45);
+}
+
+.manager-layout .va-utilization-page .va-summary-icon{
+	width:2.5rem;
+	height:2.5rem;
+	border-radius:.6rem;
+	display:inline-flex;
+	align-items:center;
+	justify-content:center;
+	font-size:1.1rem;
+	margin-bottom:.75rem;
+}
+
+.manager-layout .va-utilization-page .va-summary-icon--blue{ background:rgba(59,130,246,.16); color:#60a5fa; }
+.manager-layout .va-utilization-page .va-summary-icon--purple{ background:rgba(168,85,247,.16); color:#c084fc; }
+.manager-layout .va-utilization-page .va-summary-icon--green{ background:rgba(16,185,129,.16); color:#34d399; }
+.manager-layout .va-utilization-page .va-summary-icon--amber{ background:rgba(245,158,11,.16); color:#fbbf24; }
+
+.manager-layout .va-utilization-page .va-utilization-table{
+	--bs-table-bg:#111827;
+	--bs-table-striped-bg:#0f172a;
+	--bs-table-hover-bg:#1f2937;
+	--bs-table-color:#e5e7eb;
+	--bs-table-border-color:rgba(148,163,184,.2);
+	min-width:1600px;
+	margin-bottom:0;
+}
+
+.manager-layout .va-utilization-page .va-utilization-table thead th{
+	background:#1f2937;
+	color:#cbd5e1;
+	font-size:.74rem;
+	text-transform:uppercase;
+	letter-spacing:.03em;
+	white-space:nowrap;
+}
+
+.manager-layout .va-utilization-page .va-utilization-table tbody td,
+.manager-layout .va-utilization-page .va-utilization-table tbody th{
+	font-size:.8rem;
+	white-space:nowrap;
+}
+
+.manager-layout .va-utilization-page .va-sticky-col{
+	position:sticky;
+	left:0;
+	z-index:2;
+	min-width:240px;
+	background:#111827;
+	box-shadow:inset -1px 0 0 rgba(148,163,184,.2);
+}
+
+.manager-layout .va-utilization-page .va-utilization-table thead .va-sticky-col{
+	background:#0f172a;
+	color:#f8fafc;
+	z-index:3;
+}
+
+.manager-layout .va-utilization-page .va-utilization-table thead th.va-name-header{
+	background-color:#020617 !important;
+	color:#f8fafc !important;
+	opacity:1;
+}
+
+.manager-layout .va-utilization-page .va-grand-total-row th,
+.manager-layout .va-utilization-page .va-grand-total-row td{
+	background:#0f1b31;
+	font-weight:600;
+}
+
+.manager-layout .va-utilization-page .va-legend-box{
+	width:18px;
+	height:18px;
+	border-radius:.35rem;
+	border:1px solid rgba(148,163,184,.3);
+	display:inline-block;
+}
+
+.manager-layout .va-utilization-page .va-heat-0{ background:rgba(51,65,85,.35); color:#94a3b8; }
+.manager-layout .va-utilization-page .va-heat-1{ background:rgba(96,165,250,.2); color:#bfdbfe; }
+.manager-layout .va-utilization-page .va-heat-2{ background:rgba(59,130,246,.35); color:#dbeafe; }
+.manager-layout .va-utilization-page .va-heat-3{ background:rgba(37,99,235,.52); color:#eff6ff; }
+.manager-layout .va-utilization-page .va-heat-4{ background:rgba(29,78,216,.78); color:#ffffff; }
+
+.manager-layout .delegated-tasks-page .delegated-tasks-card{
+	overflow:hidden;
+}
+
+.manager-layout .delegated-tasks-page .delegated-tasks-header{
+	background:#111827;
+	border-bottom:1px solid rgba(148,163,184,.2);
+}
+
+.manager-layout .delegated-tasks-page .delegated-filter-control{
+	background:#0f172a;
+	border:1px solid rgba(148,163,184,.35);
+	color:#e5e7eb;
+}
+
+.manager-layout .delegated-tasks-page .delegated-filter-control::placeholder{
+	color:#94a3b8;
+}
+
+.manager-layout .delegated-tasks-page .delegated-filter-control:focus{
+	background:#0f172a;
+	border-color:#2A6CF6;
+	box-shadow:0 0 0 .2rem rgba(42,108,246,.25);
+	color:#e5e7eb;
+}
+
+.manager-layout .delegated-tasks-page .delegated-status-filter{
+	width:100%;
+	max-width:170px;
+}
+
+.manager-layout .delegated-tasks-page .delegated-search-input{
+	width:100%;
+	max-width:260px;
+}
+
+.manager-layout .delegated-tasks-page .delegated-search-btn{
+	width:auto;
+}
+
+.manager-layout .delegated-tasks-page .delegated-tasks-table{
+	--bs-table-bg:#111827;
+	--bs-table-striped-bg:#0f172a;
+	--bs-table-hover-bg:#1f2937;
+	--bs-table-color:#e5e7eb;
+	--bs-table-border-color:rgba(148,163,184,.2);
+	margin-bottom:0;
+}
+
+.manager-layout .delegated-tasks-page .delegated-tasks-table thead th{
+	background:#1f2937;
+	color:#94a3b8;
+	font-size:.74rem;
+	font-weight:600;
+	text-transform:uppercase;
+	letter-spacing:.03em;
+	white-space:nowrap;
+}
+
+.manager-layout .delegated-tasks-page .delegated-sort-link{
+	display:inline-flex;
+	align-items:center;
+	color:inherit;
+	text-decoration:none;
+}
+
+.manager-layout .delegated-tasks-page .delegated-sort-link:hover{
+	color:#cbd5e1;
+}
+
+.manager-layout .delegated-tasks-page .delegated-tasks-table tbody td{
+	font-size:.875rem;
+	color:#e5e7eb;
+}
+
+.manager-layout .delegated-tasks-page .delegated-task-row{
+	cursor:pointer;
+}
+
+.manager-layout .delegated-tasks-page .delegated-task-desc{
+	max-width:340px;
+}
+
+.manager-layout .delegated-tasks-page .badge-working{
+	background:rgba(59,130,246,.15);
+	color:#93c5fd;
+	border:1px solid rgba(59,130,246,.35);
+}
+
+.manager-layout .delegated-tasks-page .badge-done{
+	background:rgba(16,185,129,.15);
+	color:#6ee7b7;
+	border:1px solid rgba(16,185,129,.35);
+}
+
+.manager-layout .delegated-tasks-page .badge-unassign{
+	background:rgba(239,68,68,.14);
+	color:#fca5a5;
+	border:1px solid rgba(239,68,68,.35);
+}
+
+.manager-layout .delegated-tasks-page .badge-pause{
+	background:rgba(245,158,11,.15);
+	color:#fcd34d;
+	border:1px solid rgba(245,158,11,.35);
+}
+
+.manager-layout .delegated-tasks-page .badge-pending{
+	background:rgba(148,163,184,.18);
+	color:#cbd5e1;
+	border:1px solid rgba(148,163,184,.35);
+}
+
+.manager-layout .delegated-tasks-page .delegated-tasks-footer{
+	background:#111827;
+	border-top:1px solid rgba(148,163,184,.2);
+}
+
+.manager-layout .manager-account-balance-search-group .form-control::placeholder{
+	color:#94a3b8;
+}
+
+.manager-layout .manager-account-balance-search-group .form-control:focus{
+	border-color:var(--teal-accent);
+	box-shadow:0 0 0 .2rem rgba(20,184,166,.2);
+}
+
+.manager-layout .manager-account-balance-table-card{
+	overflow:hidden;
+}
+
+.manager-layout .manager-account-balance-table{
+	--bs-table-bg:#111827;
+	--bs-table-color:#e5e7eb;
+	--bs-table-border-color:rgba(148,163,184,.2);
+	margin-bottom:0;
+}
+
+.manager-layout .manager-account-balance-table thead th{
+	background:#0b1220;
+	color:#cbd5e1;
+	font-size:.75rem;
+	text-transform:uppercase;
+	letter-spacing:.03em;
+	border-bottom:1px solid rgba(148,163,184,.25);
+	white-space:nowrap;
+}
+
+.manager-layout .manager-account-balance-table tbody tr:hover{
+	background:#172033;
+}
+
+.manager-layout .manager-account-balance-table tbody td{
+	color:#e5e7eb;
+	vertical-align:middle;
+}
+
+.manager-layout .manager-account-balance-empty{
+	color:#94a3b8;
+}
+
+.manager-layout .manager-account-balance-action-btn{
+	background:var(--teal-accent);
+	border:1px solid var(--teal-accent);
+	color:#ffffff;
+	font-weight:500;
+}
+
+.manager-layout .manager-account-balance-action-btn:hover,
+.manager-layout .manager-account-balance-action-btn:focus{
+	background:var(--teal-primary);
+	border-color:var(--teal-primary);
+	color:#ffffff;
+}
+
+.manager-layout .manager-account-balance-mobile-card{
+	background:#111827;
+	border:1px solid rgba(148,163,184,.2);
+	color:#e5e7eb;
+	border-radius:.75rem;
+}
+
+.manager-layout .manager-account-balance-mobile-name{
+	font-size:1rem;
+	font-weight:600;
+	color:#f8fafc;
+}
+
+.manager-layout .manager-account-balance-mobile-label{
+	font-size:.75rem;
+	color:#94a3b8;
+	margin-bottom:.1rem;
+}
+
+.manager-layout .manager-account-balance-mobile-value{
+	font-size:.95rem;
+	color:#e5e7eb;
+	font-weight:500;
+}
+
+.manager-layout .manager-add-hours-modal{
+	--bs-modal-bg:#111827;
+}
+
+.manager-layout .manager-add-hours-modal .modal-dialog{
+	max-width:480px;
+}
+
+.manager-layout .manager-dark-modal{
+	background:#111827;
+	border:1px solid rgba(148,163,184,.25);
+	color:#e5e7eb;
+	border-radius:.75rem;
+}
+
+.manager-layout .manager-dark-modal .modal-title{
+	color:#f8fafc;
+	font-weight:600;
+}
+
+.manager-layout .manager-dark-modal-close{
+	filter:brightness(0) invert(1);
+	opacity:.85;
+}
+
+.manager-layout .manager-dark-modal-close:hover{
+	opacity:1;
+}
+
+.manager-layout .manager-add-hours-description{
+	color:#94a3b8;
+	font-size:.9rem;
+}
+
+.manager-layout .manager-dark-modal .form-label,
+.manager-layout .manager-dark-modal .form-check-label,
+.manager-layout .manager-dark-modal legend.form-label{
+	color:#cbd5e1;
+	font-size:.875rem;
+	font-weight:500;
+}
+
+.manager-layout .manager-add-hours-input{
+	background:#0f172a;
+	border-color:rgba(148,163,184,.35);
+	color:#e5e7eb;
+}
+
+.manager-layout .manager-add-hours-input::placeholder{
+	color:#94a3b8;
+}
+
+.manager-layout .manager-add-hours-input:focus{
+	background:#0f172a;
+	border-color:var(--teal-accent);
+	box-shadow:0 0 0 .2rem rgba(20,184,166,.2);
+	color:#e5e7eb;
+}
+
+.manager-layout .manager-add-hours-input-disabled,
+.manager-layout .manager-add-hours-input:disabled{
+	background:#1f2937;
+	border-color:rgba(148,163,184,.3);
+	color:#94a3b8;
+	opacity:1;
+}
+
+.manager-layout .manager-dark-modal .form-check-input{
+	background-color:#0f172a;
+	border-color:rgba(148,163,184,.5);
+}
+
+.manager-layout .manager-dark-modal .form-check-input:checked{
+	background-color:var(--teal-accent);
+	border-color:var(--teal-accent);
+}
+
+.manager-layout .manager-add-hours-exit-btn{
+	border-color:rgba(148,163,184,.45);
+	color:#cbd5e1;
+}
+
+.manager-layout .manager-add-hours-exit-btn:hover,
+.manager-layout .manager-add-hours-exit-btn:focus{
+	background:#1f2937;
+	border-color:rgba(148,163,184,.6);
+	color:#f8fafc;
+}
+
+.manager-layout .manager-add-hours-save-btn{
+	width:auto;
+}
+
+@media (max-width: 767.98px){
+	.manager-layout .manager-dark-modal .modal-footer .btn,
+	.manager-layout .manager-add-hours-save-btn{
+		width:100%;
+	}
+}
+
+.manager-layout .daily-consumption-page{
+	background:#0f172a;
+	min-height:100vh;
+}
+
+.manager-layout .daily-consumption-page .card-body .text-muted{
+	color:#9fb0c6 !important;
+}
+
+.manager-layout .daily-consumption-page .card-body .text-secondary,
+.manager-layout .daily-consumption-page .small.text-secondary{
+	color:#a9b9cd !important;
+}
+
+.manager-layout .dc-filter-select{
+	min-width:132px;
+	background:#0f172a;
+	border:1px solid rgba(148,163,184,.35);
+	color:#e5e7eb;
+}
+
+.manager-layout .dc-filter-select:focus{
+	background:#0f172a;
+	color:#e5e7eb;
+	border-color:#2A6CF6;
+	box-shadow:0 0 0 .2rem rgba(42,108,246,.25);
+}
+
+.manager-layout .dc-search-btn{
+	width:38px;
+	height:38px;
+	display:inline-flex;
+	align-items:center;
+	justify-content:center;
+}
+
+.manager-layout .dc-summary-icon{
+	width:2.5rem;
+	height:2.5rem;
+	display:inline-flex;
+	align-items:center;
+	justify-content:center;
+	border-radius:.6rem;
+	font-size:1.1rem;
+	margin-bottom:.75rem;
+}
+
+.manager-layout .dc-summary-icon--blue{background:rgba(59,130,246,.16);color:#60a5fa;}
+.manager-layout .dc-summary-icon--purple{background:rgba(168,85,247,.16);color:#c084fc;}
+.manager-layout .dc-summary-icon--amber{background:rgba(245,158,11,.16);color:#fbbf24;}
+.manager-layout .dc-summary-icon--green{background:rgba(16,185,129,.16);color:#34d399;}
+
+.manager-layout .dc-table-header{
+	background:#0b1220;
+	border-bottom:1px solid rgba(148,163,184,.2);
+}
+
+.manager-layout .dc-consumption-table{
+	--bs-table-bg:#111827;
+	--bs-table-striped-bg:#0f172a;
+	--bs-table-hover-bg:#1f2937;
+	--bs-table-color:#e5e7eb;
+	--bs-table-border-color:rgba(148,163,184,.2);
+	min-width:1680px;
+	margin-bottom:0;
+}
+
+.manager-layout .dc-consumption-table thead th{
+	background:#1f2937;
+	color:#cbd5e1;
+	font-size:.74rem;
+	font-weight:600;
+	text-transform:uppercase;
+	letter-spacing:.03em;
+	white-space:nowrap;
+}
+
+.manager-layout .dc-account-col{
+	min-width:280px;
+	width:280px;
+}
+
+.manager-layout .dc-consumption-table tbody td,
+.manager-layout .dc-consumption-table tbody th{
+	font-size:.8rem;
+	white-space:nowrap;
+}
+
+.manager-layout .dc-day-col{
+	min-width:52px;
+	width:52px;
+	text-align:center;
+}
+
+.manager-layout .dc-total-col{
+	min-width:92px;
+	width:92px;
+	text-align:right;
+	background:#111827;
+}
+
+.manager-layout .dc-grand-total-row th,
+.manager-layout .dc-grand-total-row td{
+	background:#0f1b31 !important;
+	font-weight:600;
+}
+
+.manager-layout .intensity-0{
+	background:transparent;
+}
+
+.manager-layout .intensity-low{
+	background:rgba(42,108,246,.12);
+}
+
+.manager-layout .intensity-medium{
+	background:rgba(42,108,246,.22);
+}
+
+.manager-layout .intensity-high{
+	background:rgba(42,108,246,.32);
+}
+
+.manager-layout .intensity-very-high{
+	background:rgba(42,108,246,.42);
+}
+
+.manager-layout .dc-legend-box{
+	width:18px;
+	height:18px;
+	border-radius:.35rem;
+	border:1px solid rgba(148,163,184,.55);
+	display:inline-block;
+}
+
+.manager-layout .daily-consumption-page .dc-legend-box.intensity-0{
+	background:rgba(51,65,85,.35);
+}
+
+.manager-layout .daily-consumption-page .dc-legend-box.intensity-low{
+	background:rgba(42,108,246,.26);
+}
+
+.manager-layout .daily-consumption-page .dc-legend-box.intensity-medium{
+	background:rgba(42,108,246,.4);
+}
+
+.manager-layout .daily-consumption-page .dc-legend-box.intensity-high{
+	background:rgba(42,108,246,.54);
+}
+
+.manager-layout .daily-consumption-page .dc-legend-box.intensity-very-high{
+	background:rgba(42,108,246,.72);
+}

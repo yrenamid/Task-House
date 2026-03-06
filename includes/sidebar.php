@@ -20,10 +20,17 @@ $employeeNavItems = [
 ];
 
 $supervisorNavItems = [
-  ['id' => 'my-accounts', 'label' => 'My Accounts', 'icon' => 'bi-briefcase-fill', 'href' => 'supervisor/myAccounts.php'],
-  ['id' => 'task-approvals', 'label' => 'Task Approvals', 'icon' => 'bi-check-circle-fill', 'href' => 'supervisor/taskapprovals.php'],
-  ['id' => 'incident-report', 'label' => 'Incident Report', 'icon' => 'bi-exclamation-triangle-fill', 'href' => 'supervisor/incidentReport.php'],
-  ['id' => 'DTR', 'label' => 'DTR', 'icon' => 'bi-calendar-fill', 'href' => 'supervisor/dtr-page.php'],
+  ['id' => 'my-accounts', 'label' => 'My Accounts', 'icon' => 'bi-briefcase-fill', 'href' => 'myAccounts.php'],
+  ['id' => 'task-approvals', 'label' => 'Task Approvals', 'icon' => 'bi-check-circle-fill', 'href' => 'taskapprovals.php'],
+  ['id' => 'incident-report', 'label' => 'Incident Report', 'icon' => 'bi-exclamation-triangle-fill', 'href' => 'incidentReport.php'],
+  ['id' => 'DTR', 'label' => 'DTR', 'icon' => 'bi-calendar-fill', 'href' => 'dtr-page.php'],
+];
+
+$managerNavItems = [
+  ['id' => 'my-department', 'label' => 'My Department', 'icon' => 'bi-diagram-3-fill', 'href' => 'myDepartment.php'],
+  ['id' => 'va-utilization', 'label' => 'VA Utilization', 'icon' => 'bi-bar-chart-line', 'link' => 'vaUtilization.php'],
+  ['id' => 'daily-consumption', 'label' => 'Daily Consumption', 'icon' => 'bi-bar-chart-line', 'link' => 'dailyConsumption.php'],
+  ['id' => 'delegated-tasks', 'label' => 'Delegated Tasks', 'icon'  => 'bi-list-check', 'link'  => 'delegatedTasks.php'],
 ];
 
 $hrItems = [
@@ -31,7 +38,7 @@ $hrItems = [
   ['file' => 'employeeHandbook.php', 'label' => 'Employee Handbook'],
 ];
 
-$allNavItems = array_merge($employeeNavItems, $supervisorNavItems);
+$allNavItems = array_merge($employeeNavItems, $supervisorNavItems, $managerNavItems);
 ?>
 <aside
   id="sidebar"
@@ -56,11 +63,15 @@ $allNavItems = array_merge($employeeNavItems, $supervisorNavItems);
 
   <nav class="sidebar-nav" aria-label="Primary">
     <?php foreach ($allNavItems as $item): ?>
-      <?php $isActive = str_replace('-', '', $normalizedActiveNav) === str_replace('-', '', strtolower((string) $item['id'])); ?>
+      <?php
+      $itemHref = (string) ($item['href'] ?? $item['link'] ?? '#');
+      $itemId = (string) ($item['id'] ?? strtolower(str_replace(['_', ' '], '-', (string) ($item['label'] ?? 'nav-item'))));
+      $isActive = str_replace('-', '', $normalizedActiveNav) === str_replace('-', '', strtolower($itemId));
+      ?>
       <a
         class="sidebar-link<?= $isActive ? ' is-active' : '' ?>"
-        href="<?= htmlspecialchars($buildSidebarHref((string) $item['href']), ENT_QUOTES, 'UTF-8') ?>"
-        data-nav="<?= htmlspecialchars($item['id'], ENT_QUOTES, 'UTF-8') ?>"
+        href="<?= htmlspecialchars($buildSidebarHref($itemHref), ENT_QUOTES, 'UTF-8') ?>"
+        data-nav="<?= htmlspecialchars($itemId, ENT_QUOTES, 'UTF-8') ?>"
         aria-current="<?= $isActive ? 'page' : 'false' ?>"
       >
         <i class="bi <?= htmlspecialchars($item['icon'], ENT_QUOTES, 'UTF-8') ?> sidebar-icon" aria-hidden="true"></i>

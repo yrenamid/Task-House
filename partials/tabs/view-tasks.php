@@ -1,8 +1,5 @@
 <?php
-/**
- * View Tasks Tab
- * Displays tasks assigned to the current account in a table format
- */
+
 
 $tasks = $accountTasks ?? [];
 
@@ -36,16 +33,6 @@ $getStatusColor = function($status) {
 		'Pending' => 'task-status-pending',
 		'Cancelled' => 'task-status-cancelled',
 		default => 'task-status-default',
-	};
-};
-
-$getStatusBgClass = function($status) {
-	return match($status) {
-		'Complete' => 'bg-success',
-		'Working' => 'bg-info',
-		'Pending' => 'bg-warning',
-		'Cancelled' => 'bg-danger',
-		default => 'bg-secondary',
 	};
 };
 ?>

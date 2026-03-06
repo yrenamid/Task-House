@@ -39,15 +39,18 @@ $getStatusBadgeClass = static function (string $status): string {
 	};
 };
 
-require __DIR__ . '/supervisorIncludes/headerSup.php';
+$assetBasePath = 'assets';
+$additionalStylesheets = ['css/supervisor.css'];
+$bodyClass = 'supervisor-layout';
+require __DIR__ . '/includes/header.php';
 ?>
 <?php
 $sidebarBasePath = '../';
-require __DIR__ . '/../includes/sidebar.php';
+require __DIR__ . '/includes/sidebar.php';
 ?>
 
 <main class="app-main dtr-page">
-	<?php require __DIR__ . '/supervisorIncludes/app-headerSup.php'; ?>
+	<?php require __DIR__ . '/includes/app-header.php'; ?>
 
 	<section class="dtr-header border-bottom">
 		<div class="container-fluid px-3 px-lg-4 py-4">
@@ -145,4 +148,4 @@ require __DIR__ . '/../includes/sidebar.php';
 	</section>
 </main>
 
-<?php require __DIR__ . '/supervisorIncludes/footerSup.php'; ?>
+<?php require __DIR__ . '/includes/footer.php'; ?>

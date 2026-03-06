@@ -557,6 +557,10 @@
   .supervisor-layout .accounts-header-grid{ font-size:.7rem; }
 }
 
+@media (min-width: 768px) and (max-width: 1399.98px){
+  .supervisor-layout .va-name{ font-size:.84rem; }
+}
+
 @media (max-width: 360px){
   .supervisor-layout .accounts-search-wrap{ padding:.75rem; }
   .supervisor-layout .accounts-item{ padding:.6rem .75rem; }
@@ -621,7 +625,7 @@
   .supervisor-layout .history-table tbody td { padding:.45rem; }
 }
 
-/*  Dark theme alignment with employee pages */
+/*  Dark theme  */
 .supervisor-layout .task-approvals-page,
 .supervisor-layout .incident-report-page,
 .supervisor-layout .accounts-page,

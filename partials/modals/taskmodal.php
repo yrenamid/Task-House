@@ -6,16 +6,67 @@ if (!isset($task) || !isset($modalId)) {
 }
 
 $taskId = htmlspecialchars($task['id'], ENT_QUOTES, 'UTF-8');
-$taskDescription = htmlspecialchars($task['description'], ENT_QUOTES, 'UTF-8');
 $taskAccountName = htmlspecialchars((string) ($task['accountName'] ?? ($task['accountId'] ?? $task['description'] ?? '')), ENT_QUOTES, 'UTF-8');
 $taskDelegator = htmlspecialchars($task['delegator'] ?? ($task['approvedBy'] ?? 'N/A'), ENT_QUOTES, 'UTF-8');
 $taskDoer = htmlspecialchars($task['doer'] ?? 'Not assigned', ENT_QUOTES, 'UTF-8');
 $taskStatus = htmlspecialchars($task['status'] ?? 'Complete', ENT_QUOTES, 'UTF-8');
 $taskHours = (int)($task['hoursLeft'] ?? 0);
-$taskInstructions = htmlspecialchars($task['instructions'] ?? '', ENT_QUOTES, 'UTF-8');
-$taskNotes = htmlspecialchars($task['notes'] ?? 'No notes available', ENT_QUOTES, 'UTF-8');
+$taskIdentifier = strtolower((string) ($task['id'] ?? 'task'));
+$taskTitle = (string) ($task['description'] ?? ($task['title'] ?? 'Task'));
+$taskAssignee = (string) ($task['doer'] ?? ($task['assignedTo'] ?? 'the assigned team member'));
+$taskStatusLabel = (string) ($task['status'] ?? 'Pending');
+$taskDueDate = (string) ($task['dueDate'] ?? date('Y-m-d'));
+$taskAccountLabel = (string) ($task['accountName'] ?? ($task['accountId'] ?? 'the account'));
+
+$taskInstructionsRaw = trim((string) ($task['instructions'] ?? ''));
+if ($taskInstructionsRaw === '') {
+	$taskInstructionsRaw = sprintf(
+		'Complete "%s" for %s. Coordinate with %s, send progress updates, and submit output for supervisor review.',
+		$taskTitle,
+		$taskAccountLabel,
+		$taskAssignee
+	);
+}
+
+$taskNotesRaw = trim((string) ($task['notes'] ?? ''));
+if ($taskNotesRaw === '') {
+	$taskNotesRaw = sprintf('Current status: %s. Assigned to: %s.', $taskStatusLabel, $taskAssignee);
+}
+
 $taskAttachments = $task['attachments'] ?? [];
+if (!is_array($taskAttachments) || empty($taskAttachments)) {
+	$taskAttachments = [
+		sprintf('%s-brief.pdf', $taskIdentifier),
+		sprintf('%s-checklist.xlsx', $taskIdentifier),
+	];
+}
+
 $taskHistory = $task['history'] ?? [];
+if (!is_array($taskHistory) || empty($taskHistory)) {
+	$taskHistory = [
+		[
+			'action' => 'Created',
+			'timestamp' => $taskDueDate . 'T08:00:00Z',
+			'user' => 'Supervisor',
+		],
+		[
+			'action' => 'Assigned',
+			'timestamp' => $taskDueDate . 'T09:00:00Z',
+			'user' => $taskAssignee,
+		],
+	];
+
+	if (in_array($taskStatusLabel, ['In Progress', 'Working', 'For Approval'], true)) {
+		$taskHistory[] = [
+			'action' => 'Updated',
+			'timestamp' => $taskDueDate . 'T10:00:00Z',
+			'user' => $taskAssignee,
+		];
+	}
+}
+
+$taskInstructions = htmlspecialchars($taskInstructionsRaw, ENT_QUOTES, 'UTF-8');
+$taskNotes = htmlspecialchars($taskNotesRaw, ENT_QUOTES, 'UTF-8');
 $fullDescription = htmlspecialchars($task['fullDescription'] ?? $task['description'], ENT_QUOTES, 'UTF-8');
 
 $isCompletedTask = isset($task['approvedDate']);
@@ -203,7 +254,7 @@ $formatDate = function($dateString) {
 								<div class="task-modal-field-card">
 									<label class="task-modal-field-label">Doer</label>
 									<p class="task-modal-field-value">
-										<?= $task['doer'] === null ? '<span class="text-muted">Not assigned</span>' : $taskDoer ?>
+										<?= ($task['doer'] ?? null) === null ? '<span class="text-muted">Not assigned</span>' : $taskDoer ?>
 									</p>
 								</div>
 							</div>
@@ -248,45 +299,104 @@ $formatDate = function($dateString) {
 										<p class="text-muted mb-0">Instructions are only available for active tasks.</p>
 									<?php else: ?>
 										<?php if ($isEditable): ?>
-											<button
-												type="button"
-												class="btn btn-sm btn-outline-success mb-3"
-												data-bs-toggle="collapse"
-												data-bs-target="#instructionForm-<?= $taskId ?>"
-											>
-												<i class="bi bi-plus-lg me-2" aria-hidden="true"></i>
-												Add Instruction
-											</button>
-											<div id="instructionForm-<?= $taskId ?>" class="collapse mb-3">
-												<textarea
-													class="form-control mb-2"
-													id="instructionTextarea-<?= $taskId ?>"
-													rows="3"
-													placeholder="Add instruction..."
-												></textarea>
-												<button
-													type="button"
-													class="btn btn-sm btn-primary"
-													data-bs-toggle="collapse"
-													data-bs-target="#instructionForm-<?= $taskId ?>,#instructionPreview-<?= $taskId ?>"
-												>
-													Save Instruction
-												</button>
+											<div class="mb-3">
+												<div class="d-flex flex-wrap gap-2">
+													<button
+														type="button"
+														class="btn btn-sm btn-outline-primary"
+														data-bs-toggle="collapse"
+														data-bs-target=".instruction-toggle-<?= $taskId ?>"
+													>
+														Edit
+													</button>
+													<button
+														type="button"
+														class="btn btn-sm btn-outline-success"
+														data-bs-toggle="collapse"
+														data-bs-target="#instructionAddForm-<?= $taskId ?>"
+													>
+														<i class="bi bi-plus-lg me-1" aria-hidden="true"></i>
+														Add Instruction
+													</button>
+												</div>
 											</div>
 										<?php endif; ?>
 										<div id="instructionList-<?= $taskId ?>" class="d-grid gap-2">
-											<?php if (trim($taskInstructions) !== ''): ?>
-												<div class="border rounded p-3 bg-white">
-													<?= nl2br($taskInstructions) ?>
+											<div class="collapse show instruction-toggle-<?= $taskId ?>" id="instructionView-<?= $taskId ?>">
+												<?php if (trim($taskInstructions) !== ''): ?>
+													<div class="border rounded p-3 bg-white">
+														<?= nl2br($taskInstructions) ?>
+													</div>
+												<?php else: ?>
+													<p class="text-muted mb-0">No instructions available.</p>
+												<?php endif; ?>
+											</div>
+											<?php if ($isEditable): ?>
+												<div class="collapse instruction-toggle-<?= $taskId ?>" id="instructionEdit-<?= $taskId ?>">
+													<textarea
+														class="form-control mb-2"
+														id="instructionTextarea-<?= $taskId ?>"
+														rows="4"
+														placeholder="Edit instruction..."
+													><?= htmlspecialchars($taskInstructionsRaw, ENT_QUOTES, 'UTF-8') ?></textarea>
+													<div class="d-flex gap-2">
+														<button
+															type="button"
+															class="btn btn-sm btn-primary"
+															data-bs-toggle="collapse"
+															data-bs-target=".instruction-toggle-<?= $taskId ?>,#instructionPreview-<?= $taskId ?>"
+														>
+															Save
+														</button>
+														<button
+															type="button"
+															class="btn btn-sm btn-outline-secondary"
+															data-bs-toggle="collapse"
+															data-bs-target=".instruction-toggle-<?= $taskId ?>"
+														>
+															Cancel
+														</button>
+													</div>
 												</div>
-											<?php else: ?>
-												<p class="text-muted mb-0">No instructions available.</p>
 											<?php endif; ?>
 											<div class="collapse" id="instructionPreview-<?= $taskId ?>">
 												<div class="border rounded p-3 bg-white">
-													New instruction added (preview)
+													Instruction updated (preview)
 												</div>
 											</div>
+											<?php if ($isEditable): ?>
+												<div class="collapse" id="instructionAddForm-<?= $taskId ?>">
+													<textarea
+														class="form-control mb-2"
+														id="instructionAddTextarea-<?= $taskId ?>"
+														rows="3"
+														placeholder="Add instruction..."
+													></textarea>
+													<div class="d-flex gap-2">
+														<button
+															type="button"
+															class="btn btn-sm btn-primary"
+															data-bs-toggle="collapse"
+															data-bs-target="#instructionAddForm-<?= $taskId ?>,#instructionAddPreview-<?= $taskId ?>"
+														>
+															Save Instruction
+														</button>
+														<button
+															type="button"
+															class="btn btn-sm btn-outline-secondary"
+															data-bs-toggle="collapse"
+															data-bs-target="#instructionAddForm-<?= $taskId ?>"
+														>
+															Cancel
+														</button>
+													</div>
+												</div>
+												<div class="collapse" id="instructionAddPreview-<?= $taskId ?>">
+													<div class="border rounded p-3 bg-white">
+														New instruction added (preview)
+													</div>
+												</div>
+											<?php endif; ?>
 										</div>
 										<?php if ($isEditable): ?>
 											<div class="task-modal-instructions-footer">
