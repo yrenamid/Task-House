@@ -138,8 +138,29 @@ h1,h2,h3,h4,h5,.modal-title{
   flex-direction:column;
   overflow-y:auto;
   overflow-x:hidden;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(130,151,186,.72) rgba(15,23,34,.88);
   min-height:0;
   transition:width .3s ease, flex-basis .3s ease;
+}
+
+.app-sidebar::-webkit-scrollbar{
+  width:10px;
+}
+
+.app-sidebar::-webkit-scrollbar-track{
+  background:rgba(15,23,34,.88);
+  border-radius:999px;
+}
+
+.app-sidebar::-webkit-scrollbar-thumb{
+  background:rgba(130,151,186,.72);
+  border-radius:999px;
+  border:2px solid rgba(15,23,34,.88);
+}
+
+.app-sidebar::-webkit-scrollbar-thumb:hover{
+  background:rgba(147,173,214,.9);
 }
 
 #sidebar.app-sidebar,

@@ -33,12 +33,19 @@ $managerNavItems = [
   ['id' => 'delegated-tasks', 'label' => 'Delegated Tasks', 'icon'  => 'bi-list-check', 'link'  => 'delegatedTasks.php'],
 ];
 
+$hrNavItems = [
+  ['id' => 'file-201',  'label' => '201 File',  'icon' => 'bi-folder2-open',   'href' => 'file201.php'],
+  ['id' => 'leaves',    'label' => 'Leaves',    'icon' => 'bi-calendar-check', 'href' => 'leaves.php'],
+  ['id' => 'overtime',  'label' => 'Overtime',  'icon' => 'bi-clock',          'href' => 'otView.php'],
+  ['id' => 'holidays',  'label' => 'Holidays',  'icon' => 'bi-calendar-heart', 'href' => 'holidays.php'],
+];
+
 $hrItems = [
   ['file' => 'codeofConduct.php', 'label' => 'Code of Conduct'],
   ['file' => 'employeeHandbook.php', 'label' => 'Employee Handbook'],
 ];
 
-$allNavItems = array_merge($employeeNavItems, $supervisorNavItems, $managerNavItems);
+$allNavItems = array_merge($employeeNavItems, $supervisorNavItems, $managerNavItems, $hrNavItems);
 ?>
 <aside
   id="sidebar"

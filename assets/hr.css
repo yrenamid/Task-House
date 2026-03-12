@@ -1,0 +1,1171 @@
+.file201-page {
+  color: #f4f7ff;
+}
+
+.file201-panel {
+  background: linear-gradient(180deg, #1f2937 0%, #17212e 100%);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 14px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.24);
+}
+
+.file201-panel .text-muted {
+  color: rgba(228, 237, 255, 0.72) !important;
+}
+
+.file201-search-wrap {
+  max-width: 540px;
+}
+
+.file201-search .input-group-text,
+.file201-search .form-control {
+  background: #0f1722;
+  border-color: rgba(255, 255, 255, 0.14);
+  color: #ecf1ff;
+}
+
+.file201-search .form-control::placeholder {
+  color: rgba(232, 240, 255, 0.45);
+}
+
+.file201-search .form-control:focus {
+  box-shadow: none;
+  border-color: #3b82f6;
+}
+
+.file201-search .input-group-text {
+  border-top-left-radius: 0.6rem;
+  border-bottom-left-radius: 0.6rem;
+}
+
+.file201-search .form-control {
+  padding-top: 0.62rem;
+  padding-bottom: 0.62rem;
+  border-top-right-radius: 0.6rem;
+  border-bottom-right-radius: 0.6rem;
+}
+
+.file201-tabs {
+  display: inline-flex;
+  gap: 0.5rem;
+  padding-bottom: 0.15rem;
+  width: max-content;
+  white-space: nowrap;
+}
+
+.file201-tabs-wrapper {
+  position: relative;
+}
+
+.file201-tabs-scroll {
+  overflow-x: auto;
+  overflow-y: hidden;
+  white-space: nowrap;
+  -webkit-overflow-scrolling: touch;
+  scroll-behavior: smooth;
+  scroll-snap-type: x proximity;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(130, 151, 186, 0.7) rgba(15, 23, 34, 0.6);
+}
+
+.file201-tabs-scroll::-webkit-scrollbar {
+  height: 8px;
+}
+
+.file201-tabs-scroll::-webkit-scrollbar-track {
+  background: rgba(15, 23, 34, 0.6);
+  border-radius: 999px;
+}
+
+.file201-tabs-scroll::-webkit-scrollbar-thumb {
+  background: rgba(130, 151, 186, 0.7);
+  border-radius: 999px;
+}
+
+.file201-tabs .nav-link {
+  background: #0f1722;
+  color: rgba(232, 240, 255, 0.72);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 999px;
+  white-space: nowrap;
+  scroll-snap-align: start;
+}
+
+.file201-tabs .nav-link.active {
+  background: #1d4ed8;
+  border-color: #1d4ed8;
+  color: #ffffff;
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.12), 0 10px 20px rgba(29, 78, 216, 0.25);
+}
+
+.file201-tab-input {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.file201-tab-pane {
+  display: none;
+}
+
+#tab-identification:checked ~ .card-header [for="tab-identification"],
+#tab-contact:checked ~ .card-header [for="tab-contact"],
+#tab-personal:checked ~ .card-header [for="tab-personal"],
+#tab-employment:checked ~ .card-header [for="tab-employment"],
+#tab-accounts:checked ~ .card-header [for="tab-accounts"],
+#tab-compensation:checked ~ .card-header [for="tab-compensation"],
+#tab-credits:checked ~ .card-header [for="tab-credits"] {
+  background-color: var(--bs-primary);
+  color: #fff;
+}
+
+#tab-identification:checked ~ .card-body .tab-identification,
+#tab-contact:checked ~ .card-body .tab-contact,
+#tab-personal:checked ~ .card-body .tab-personal,
+#tab-employment:checked ~ .card-body .tab-employment,
+#tab-accounts:checked ~ .card-body .tab-accounts,
+#tab-compensation:checked ~ .card-body .tab-compensation,
+#tab-credits:checked ~ .card-body .tab-credits {
+  display: block;
+}
+
+.file201-table {
+  --bs-table-color: #e6eeff;
+  --bs-table-bg: transparent;
+  --bs-table-striped-color: #e6eeff;
+  --bs-table-active-color: #ffffff;
+  --bs-table-hover-color: #ffffff;
+  --bs-table-border-color: rgba(255, 255, 255, 0.1);
+  color: #e6eeff;
+  margin: 0;
+}
+
+.file201-table th,
+.file201-table td {
+  padding: 0.85rem 1rem;
+}
+
+.file201-table thead th {
+  background: #0f1722;
+  color: rgba(232, 240, 255, 0.78);
+  font-weight: 500;
+  border-color: rgba(255, 255, 255, 0.1);
+  font-size: 0.875rem;
+}
+
+.file201-table tbody td {
+  border-color: rgba(255, 255, 255, 0.08);
+  font-size: 0.875rem;
+  background: #17212e;
+  color: #e6eeff;
+}
+
+.file201-table thead th,
+.file201-table tbody td,
+.file201-table tbody td a,
+.file201-table tbody td span {
+  color: #e6eeff !important;
+}
+
+.file201-table .file201-comp-group {
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  color: rgba(230, 238, 255, 0.72) !important;
+}
+
+.file201-table thead small.text-muted {
+  color: rgba(230, 238, 255, 0.62) !important;
+}
+
+.file201-table td.text-primary,
+.file201-table th.text-primary {
+  color: #60a5fa !important;
+}
+
+.file201-table tbody tr:nth-child(even) td {
+  background: #131d2b;
+}
+
+.file201-table tbody tr:hover td {
+  background: #0f1722;
+}
+
+.btn-file201-primary {
+  background: #2563eb;
+  border-color: #2563eb;
+  color: #ffffff;
+}
+
+.btn-file201-primary:hover,
+.btn-file201-primary:focus {
+  background: #1d4ed8;
+  border-color: #1d4ed8;
+  color: #ffffff;
+}
+
+.btn-file201-secondary {
+  background: #0f1722;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  color: #e6eeff;
+}
+
+.btn-file201-secondary:hover,
+.btn-file201-secondary:focus {
+  background: #1f2937;
+  border-color: rgba(255, 255, 255, 0.24);
+  color: #ffffff;
+}
+
+.btn-file201-success {
+  background: rgba(22, 163, 74, 0.22);
+  border: 1px solid rgba(34, 197, 94, 0.45);
+  color: #86efac;
+}
+
+.btn-file201-success:hover,
+.btn-file201-success:focus {
+  background: rgba(22, 163, 74, 0.34);
+  color: #dcfce7;
+}
+
+.file201-badge-status,
+.file201-badge-active,
+.file201-badge-inactive {
+  padding: 0.35rem 0.6rem;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+
+.file201-badge-status {
+  background: rgba(59, 130, 246, 0.16);
+  border: 1px solid rgba(59, 130, 246, 0.45);
+  color: #93c5fd;
+}
+
+.file201-badge-active {
+  background: rgba(34, 197, 94, 0.2);
+  border: 1px solid rgba(34, 197, 94, 0.45);
+  color: #86efac;
+}
+
+.file201-badge-inactive {
+  background: rgba(107, 114, 128, 0.28);
+  border: 1px solid rgba(148, 163, 184, 0.45);
+  color: #cbd5e1;
+}
+
+.file201-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 1060;
+  background: rgba(0, 0, 0, 0.72);
+  padding: 1rem;
+  overflow-y: auto;
+}
+
+.file201-modal {
+  max-width: 960px;
+  margin: 1.5rem auto;
+  background: #131d2b;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #e6eeff;
+}
+
+.file201-modal-lg {
+  max-width: 1240px;
+}
+
+.file201-modal .card-header,
+.file201-modal .card-footer {
+  background: #0f1722;
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+.file201-modal .form-label {
+  color: rgba(232, 240, 255, 0.78);
+}
+
+.file201-modal .form-control,
+.file201-modal .form-select {
+  background: #0f1722;
+  border-color: rgba(255, 255, 255, 0.14);
+  color: #ecf1ff;
+}
+
+.leaves-page {
+  color: #f4f7ff;
+}
+
+.leaves-search-wrap {
+  width: 100%;
+  max-width: 420px;
+}
+
+.leaves-search .input-group-text,
+.leaves-search .form-control {
+  background: #0f1722;
+  border-color: rgba(255, 255, 255, 0.14);
+  color: #ecf1ff;
+}
+
+.leaves-search .form-control::placeholder {
+  color: rgba(232, 240, 255, 0.45);
+}
+
+.leaves-search .form-control:focus {
+  box-shadow: none;
+  border-color: #3b82f6;
+}
+
+
+.leaves-table {
+  --bs-table-color: #e6eeff;
+  --bs-table-bg: transparent;
+  --bs-table-hover-color: #ffffff;
+  --bs-table-hover-bg: #0f1722;
+  --bs-table-border-color: rgba(255, 255, 255, 0.1);
+  color: #e6eeff;
+}
+
+.leaves-table thead th {
+  background: #0f1722;
+  color: rgba(232, 240, 255, 0.78);
+  font-weight: 500;
+  border-color: rgba(255, 255, 255, 0.1);
+  white-space: nowrap;
+}
+
+.leaves-table tbody td {
+  background: #17212e;
+  border-color: rgba(255, 255, 255, 0.08);
+  vertical-align: middle;
+}
+
+.leaves-table tbody tr:nth-child(even) td {
+  background: #131d2b;
+}
+
+
+.btn-leaves-proof {
+  background: #0f1722;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  color: #e6eeff;
+}
+
+.btn-leaves-proof:hover,
+.btn-leaves-proof:focus {
+  background: #1f2937;
+  border-color: rgba(255, 255, 255, 0.28);
+  color: #fff;
+}
+
+.btn-leaves-icon {
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  color: #dbe7ff;
+}
+
+.btn-leaves-icon:hover,
+.btn-leaves-icon:focus {
+  background: #0f1722;
+  border-color: rgba(255, 255, 255, 0.28);
+  color: #fff;
+}
+
+.leaves-dropdown-menu {
+  background: #0f1722;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.leaves-dropdown-menu .dropdown-item {
+  color: #dbe7ff;
+}
+
+.leaves-dropdown-menu .dropdown-item:hover,
+.leaves-dropdown-menu .dropdown-item:focus {
+  background: #1f2937;
+}
+
+.leaves-modal {
+  background: #131d2b;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #e6eeff;
+}
+
+.leaves-modal .modal-header,
+.leaves-modal .modal-footer {
+  border-color: rgba(255, 255, 255, 0.1);
+  background: #0f1722;
+}
+
+.leaves-modal .form-label {
+  color: rgba(232, 240, 255, 0.78);
+}
+
+.leaves-textarea {
+  background: #0f1722;
+  color: #ecf1ff;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+}
+
+.leaves-textarea::placeholder {
+  color: rgba(232, 240, 255, 0.45);
+}
+
+.leaves-textarea:focus {
+  box-shadow: none;
+  border-color: #3b82f6;
+  background: #0f1722;
+  color: #ecf1ff;
+}
+
+.btn-leaves-cancel {
+  background: #0f1722;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  color: #e6eeff;
+}
+
+.btn-leaves-cancel:hover,
+.btn-leaves-cancel:focus {
+  background: #1f2937;
+  border-color: rgba(255, 255, 255, 0.24);
+  color: #fff;
+}
+
+.file201-modal .form-control::placeholder,
+.file201-page .form-control::placeholder,
+.file201-page .form-select::placeholder {
+  color: rgba(232, 240, 255, 0.62);
+  opacity: 1;
+}
+
+.file201-modal .form-control:focus,
+.file201-modal .form-select:focus {
+  box-shadow: none;
+  border-color: #3b82f6;
+}
+
+#addEmployeeModal .modal-content {
+  max-height: calc(100vh - 2rem);
+}
+
+#addEmployeeModal .card-body {
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(130, 151, 186, 0.72) rgba(15, 23, 34, 0.88);
+}
+
+#addEmployeeModal .card-body::-webkit-scrollbar {
+  width: 10px;
+}
+
+#addEmployeeModal .card-body::-webkit-scrollbar-track {
+  background: rgba(15, 23, 34, 0.88);
+  border-radius: 999px;
+}
+
+#addEmployeeModal .card-body::-webkit-scrollbar-thumb {
+  background: rgba(130, 151, 186, 0.72);
+  border-radius: 999px;
+  border: 2px solid rgba(15, 23, 34, 0.88);
+}
+
+#addEmployeeModal .card-body::-webkit-scrollbar-thumb:hover {
+  background: rgba(147, 173, 214, 0.9);
+}
+
+@media (max-width: 767.98px) {
+  .file201-table {
+    min-width: 760px;
+  }
+
+  .file201-modal {
+    margin: 0.75rem auto;
+  }
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   Overtime page  (otView.php)
+═══════════════════════════════════════════════════════════════ */
+
+.ot-page {
+  color: #f4f7ff;
+}
+
+.ot-panel {
+  background: linear-gradient(180deg, #1f2937 0%, #17212e 100%);
+  border: 1px solid rgba(255, 255, 255, 0.08) !important;
+  border-radius: 14px;
+}
+
+/* Segmented-tab pill background */
+.ot-tabs-bg {
+  background: #0f1722;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Tab buttons */
+.ot-tabs {
+  list-style: none;
+  flex-wrap: nowrap;
+}
+
+.ot-tabs__btn {
+  background: transparent;
+  border: none;
+  border-radius: 8px;
+  color: rgba(232, 240, 255, 0.65);
+  font-size: 0.875rem;
+  padding: 0.55rem 1.25rem;
+  transition: background 0.15s, color 0.15s;
+  white-space: nowrap;
+}
+
+.ot-tabs__btn:hover {
+  background: rgba(255, 255, 255, 0.06);
+  color: rgba(232, 240, 255, 0.9);
+}
+
+.ot-tabs__btn.active,
+.ot-tabs__btn.show {
+  background: #1d4ed8;
+  color: #ffffff;
+  box-shadow: 0 4px 14px rgba(29, 78, 216, 0.35);
+}
+
+.ot-tab-count {
+  font-size: 0.8rem;
+  opacity: 0.85;
+}
+
+/* Search bar */
+.ot-search-wrap {
+  width: 100%;
+  max-width: 340px;
+}
+
+.ot-search .input-group-text,
+.ot-search .form-control {
+  background: #0f1722;
+  border-color: rgba(255, 255, 255, 0.14);
+  color: #ecf1ff;
+}
+
+.ot-search .form-control::placeholder {
+  color: rgba(232, 240, 255, 0.4);
+}
+
+.ot-search .form-control:focus {
+  box-shadow: none;
+  border-color: #3b82f6;
+}
+
+.ot-search .input-group-text {
+  border-top-left-radius: 0.6rem;
+  border-bottom-left-radius: 0.6rem;
+}
+
+.ot-search .form-control {
+  padding-top: 0.62rem;
+  padding-bottom: 0.62rem;
+  border-top-right-radius: 0.6rem;
+  border-bottom-right-radius: 0.6rem;
+}
+
+/* Table wrapper */
+.ot-table-wrap {
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+  scrollbar-width: thin;
+  scrollbar-color: rgba(130, 151, 186, 0.72) rgba(15, 23, 34, 0.88);
+}
+
+.ot-table-wrap::-webkit-scrollbar {
+  height: 10px;
+  width: 10px;
+}
+
+.ot-table-wrap::-webkit-scrollbar-track {
+  background: rgba(15, 23, 34, 0.88);
+  border-radius: 999px;
+}
+
+.ot-table-wrap::-webkit-scrollbar-thumb {
+  background: rgba(130, 151, 186, 0.72);
+  border-radius: 999px;
+  border: 2px solid rgba(15, 23, 34, 0.88);
+}
+
+.ot-table-wrap::-webkit-scrollbar-thumb:hover {
+  background: rgba(147, 173, 214, 0.9);
+}
+
+/* Table */
+.ot-table {
+  --bs-table-color: #e6eeff;
+  --bs-table-bg: transparent;
+  --bs-table-hover-color: #ffffff;
+  --bs-table-hover-bg: #0f1722;
+  --bs-table-border-color: rgba(255, 255, 255, 0.08);
+  color: #e6eeff;
+  min-width: 720px;
+}
+
+.ot-table thead th {
+  background: #0f1722;
+  color: rgba(232, 240, 255, 0.72);
+  font-weight: 500;
+  font-size: 0.875rem;
+  border-color: rgba(255, 255, 255, 0.12);
+  padding: 1rem 1.25rem;
+  white-space: nowrap;
+}
+
+.ot-table tbody td {
+  background: #17212e;
+  border-color: rgba(255, 255, 255, 0.07);
+  font-size: 0.875rem;
+  padding: 1.1rem 1.25rem;
+}
+
+/* Zebra striping */
+.ot-table tbody tr:nth-child(even) td {
+  background: #131d2b;
+}
+
+.ot-table tbody tr:hover td {
+  background: #0f1722;
+}
+
+/* Light secondary text utility for table cells */
+.ot-table .text-light-secondary {
+  color: rgba(228, 237, 255, 0.72) !important;
+}
+
+/* "Overtime" type badge */
+.ot-type-badge {
+  display: inline-block;
+  padding: 0.28rem 0.75rem;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 500;
+  background: rgba(59, 130, 246, 0.12);
+  border: 1px solid rgba(59, 130, 246, 0.3);
+  color: #93c5fd;
+  white-space: nowrap;
+}
+
+/* Notes column max width */
+.ot-col-notes {
+  max-width: 320px;
+}
+
+@media (max-width: 767.98px) {
+  .ot-tabs-bg {
+    display: flex !important;
+    width: 100%;
+  }
+
+  .ot-tabs {
+    flex-direction: column;
+    width: 100%;
+    gap: 0.5rem !important;
+  }
+
+  .ot-tabs .nav-item {
+    width: 100%;
+  }
+
+  .ot-tabs__btn {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+  }
+
+  .ot-search-wrap {
+    max-width: 100%;
+  }
+}
+
+/* ================================================================
+   Holidays Page — holidays-* namespace
+   ================================================================ */
+
+.holidays-header-card {
+  background: linear-gradient(135deg, #1f2937 0%, #17212e 100%);
+  border: 1px solid rgba(255, 255, 255, 0.08) !important;
+  border-radius: 14px;
+}
+
+.holidays-header-subtitle {
+  color: rgba(232, 240, 255, 0.6);
+  font-size: 0.875rem;
+}
+
+.holidays-month-badge {
+  background: #1d4ed8;
+  box-shadow: 0 4px 14px rgba(29, 78, 216, 0.35);
+}
+
+.holidays-month-badge-text {
+  color: #ffffff;
+  font-size: 0.9rem;
+}
+
+.holidays-overview-card {
+  background: linear-gradient(180deg, #1f2937 0%, #17212e 100%);
+  border: 1px solid rgba(255, 255, 255, 0.08) !important;
+  border-radius: 14px;
+}
+
+.holidays-overview-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.holidays-overview-icon--blue {
+  background: rgba(59, 130, 246, 0.18);
+  color: #60a5fa;
+}
+
+.holidays-overview-icon--red {
+  background: rgba(239, 68, 68, 0.18);
+  color: #f87171;
+}
+
+.holidays-overview-icon--orange {
+  background: rgba(249, 115, 22, 0.18);
+  color: #fb923c;
+}
+
+.holidays-overview-number {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #e6eeff;
+  line-height: 1;
+}
+
+.holidays-overview-label {
+  font-size: 0.8rem;
+  color: rgba(232, 240, 255, 0.6);
+  margin-top: 0.2rem;
+}
+
+.holidays-calendar-card {
+  background: linear-gradient(180deg, #1f2937 0%, #17212e 100%);
+  border: 1px solid rgba(255, 255, 255, 0.08) !important;
+  border-radius: 14px;
+}
+
+.holidays-cal-title {
+  color: #e6eeff;
+}
+
+.holidays-cal-nav-btn {
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: rgba(232, 240, 255, 0.65);
+  border-radius: 8px;
+  width: 36px;
+  height: 36px;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: default;
+}
+
+.holidays-cal-nav-btn:hover {
+  background: rgba(255, 255, 255, 0.06);
+  color: #e6eeff;
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+.holidays-cal-grid {
+  display: grid;
+  grid-template-columns: repeat(7, minmax(0, 1fr));
+  gap: 0.35rem;
+}
+
+.holidays-cal-dow {
+  text-align: center;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: rgba(232, 240, 255, 0.45);
+  padding: 0.5rem 0;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.holidays-calendar-day {
+  position: relative;
+  background: #17212e;
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  border-radius: 8px;
+  min-height: 56px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  padding: 0.35rem;
+}
+
+.holidays-calendar-day--empty {
+  background: transparent;
+  border-color: transparent;
+}
+
+.holidays-calendar-day--holiday {
+  border-color: rgba(255, 255, 255, 0.14);
+}
+
+.holidays-cal-day-num {
+  font-size: 0.85rem;
+  color: rgba(232, 240, 255, 0.85);
+  line-height: 1;
+}
+
+.holidays-cal-dot {
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+}
+
+.holidays-cal-dot--regular {
+  background: #ef4444;
+}
+
+.holidays-cal-dot--special {
+  background: #f97316;
+}
+
+.holidays-cal-dot--lg {
+  width: 12px;
+  height: 12px;
+}
+
+.holidays-cal-legend {
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.holidays-legend-text {
+  font-size: 0.8rem;
+  color: rgba(232, 240, 255, 0.65);
+}
+
+.holidays-next-card {
+  background: linear-gradient(135deg, #1d4ed8 0%, #1e40af 100%);
+  border-radius: 14px;
+}
+
+.holidays-next-icon {
+  font-size: 1.4rem;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.holidays-next-label {
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.holidays-next-title {
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: #ffffff;
+}
+
+.holidays-list-card {
+  background: linear-gradient(180deg, #1f2937 0%, #17212e 100%);
+  border: 1px solid rgba(255, 255, 255, 0.08) !important;
+  border-radius: 14px;
+}
+
+.holidays-list-heading {
+  color: rgba(232, 240, 255, 0.9);
+  font-size: 0.95rem;
+}
+
+.holidays-list-item {
+  padding: 0.9rem 0.1rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+  border-radius: 12px;
+  transition: background-color 0.18s ease, border-color 0.18s ease;
+}
+
+.holidays-list-item:hover {
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.holidays-list-item--last {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.holidays-list-row {
+  width: 100%;
+}
+
+.holidays-list-main {
+  min-width: 0;
+}
+
+.holidays-list-date-badge {
+  background: rgba(255, 255, 255, 0.07);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  padding: 0.35rem 0.65rem;
+  min-width: 52px;
+  text-align: center;
+}
+
+.holidays-list-date-text {
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: rgba(232, 240, 255, 0.85);
+  white-space: nowrap;
+}
+
+.holidays-list-name {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #e6eeff;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.holidays-list-type-badge {
+  flex-shrink: 0;
+}
+
+.holidays-badge-regular {
+  background: rgba(239, 68, 68, 0.18) !important;
+  color: #fca5a5 !important;
+  border: 1px solid rgba(239, 68, 68, 0.35);
+  font-size: 0.72rem;
+  font-weight: 500;
+}
+
+.holidays-badge-special {
+  background: rgba(249, 115, 22, 0.18) !important;
+  color: #fdba74 !important;
+  border: 1px solid rgba(249, 115, 22, 0.35);
+  font-size: 0.72rem;
+  font-weight: 500;
+}
+
+@media (max-width: 767.98px) {
+  .holidays-cal-day-num {
+    font-size: 0.75rem;
+  }
+
+  .holidays-calendar-day {
+    min-height: 40px;
+    border-radius: 6px;
+  }
+
+  .holidays-cal-grid {
+    gap: 0.2rem;
+  }
+
+  .holidays-overview-number {
+    font-size: 1.6rem;
+  }
+
+  .holidays-list-item {
+    padding: 0.85rem 0;
+  }
+
+  .holidays-list-name {
+    font-size: 0.82rem;
+  }
+}
+
+/* Leaves page layout styled independently from overtime */
+.leaves-header-card,
+.leaves-tabs-container {
+  background: linear-gradient(180deg, #1f2937 0%, #17212e 100%);
+  border: 1px solid rgba(255, 255, 255, 0.08) !important;
+  border-radius: 14px;
+}
+
+.leaves-tabs-bg {
+  background: #0f1722;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.leaves-tabs-nav {
+  list-style: none;
+  flex-wrap: nowrap;
+}
+
+.leaves-tab-btn {
+  background: transparent;
+  border: none;
+  border-radius: 8px;
+  color: rgba(232, 240, 255, 0.65);
+  font-size: 0.875rem;
+  padding: 0.55rem 1.25rem;
+  transition: background 0.15s, color 0.15s;
+  white-space: nowrap;
+}
+
+.leaves-tab-btn:hover {
+  background: rgba(255, 255, 255, 0.06);
+  color: rgba(232, 240, 255, 0.9);
+}
+
+.leaves-tab-btn.active,
+.leaves-tab-btn.show {
+  background: #1d4ed8;
+  color: #ffffff;
+  box-shadow: 0 4px 14px rgba(29, 78, 216, 0.35);
+}
+
+.leaves-tab-count {
+  font-size: 0.8rem;
+  opacity: 0.85;
+}
+
+.leaves-search-wrap {
+  width: 100%;
+  max-width: 340px;
+}
+
+.leaves-search .input-group-text,
+.leaves-search .form-control {
+  background: #0f1722;
+  border-color: rgba(255, 255, 255, 0.14);
+  color: #ecf1ff;
+}
+
+.leaves-search .form-control::placeholder {
+  color: rgba(232, 240, 255, 0.4);
+}
+
+.leaves-search .form-control:focus {
+  box-shadow: none;
+  border-color: #3b82f6;
+}
+
+.leaves-search .input-group-text {
+  border-top-left-radius: 0.6rem;
+  border-bottom-left-radius: 0.6rem;
+}
+
+.leaves-search .form-control {
+  padding-top: 0.62rem;
+  padding-bottom: 0.62rem;
+  border-top-right-radius: 0.6rem;
+  border-bottom-right-radius: 0.6rem;
+}
+
+.leaves-table-container {
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+  scrollbar-width: thin;
+  scrollbar-color: rgba(130, 151, 186, 0.72) rgba(15, 23, 34, 0.88);
+}
+
+.leaves-table-container::-webkit-scrollbar {
+  height: 10px;
+  width: 10px;
+}
+
+.leaves-table-container::-webkit-scrollbar-track {
+  background: rgba(15, 23, 34, 0.88);
+  border-radius: 999px;
+}
+
+.leaves-table-container::-webkit-scrollbar-thumb {
+  background: rgba(130, 151, 186, 0.72);
+  border-radius: 999px;
+  border: 2px solid rgba(15, 23, 34, 0.88);
+}
+
+.leaves-table-container::-webkit-scrollbar-thumb:hover {
+  background: rgba(147, 173, 214, 0.9);
+}
+
+.leaves-table {
+  --bs-table-color: #e6eeff;
+  --bs-table-bg: transparent;
+  --bs-table-hover-color: #ffffff;
+  --bs-table-hover-bg: #0f1722;
+  --bs-table-border-color: rgba(255, 255, 255, 0.08);
+  color: #e6eeff;
+  min-width: 720px;
+}
+
+.leaves-table thead th {
+  background: #0f1722;
+  color: rgba(232, 240, 255, 0.72);
+  font-weight: 500;
+  font-size: 0.875rem;
+  border-color: rgba(255, 255, 255, 0.12);
+  padding: 1rem 1.25rem;
+  white-space: nowrap;
+}
+
+.leaves-table tbody td {
+  background: #17212e;
+  border-color: rgba(255, 255, 255, 0.07);
+  font-size: 0.875rem;
+  padding: 1.1rem 1.25rem;
+}
+
+.leaves-table tbody tr:nth-child(even) td {
+  background: #131d2b;
+}
+
+.leaves-table tbody tr:hover td {
+  background: #0f1722;
+}
+
+.leaves-text-secondary {
+  color: rgba(228, 237, 255, 0.72) !important;
+}
+
+.leaves-col-notes {
+  max-width: 320px;
+}
+
+@media (max-width: 767.98px) {
+  .leaves-tabs-bg {
+    display: flex !important;
+    width: 100%;
+  }
+
+  .leaves-tabs-nav {
+    flex-direction: column;
+    width: 100%;
+    gap: 0.5rem !important;
+  }
+
+  .leaves-tabs-nav .nav-item {
+    width: 100%;
+  }
+
+  .leaves-tab-btn {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+  }
+
+  .leaves-search-wrap {
+    max-width: 100%;
+  }
+}
