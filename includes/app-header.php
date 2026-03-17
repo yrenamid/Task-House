@@ -30,7 +30,7 @@ $userInitials = $userInitials ?? 'JD';
         <li><a class="dropdown-item" href="#">Profile</a></li>
         <li><a class="dropdown-item" href="#">Settings</a></li>
         <li><hr class="dropdown-divider" /></li>
-        <li><a class="dropdown-item" href="#">Logout</a></li>
+        <li><a class="dropdown-item" href="loginPage.php">Logout</a></li>
       </ul>
     </div>
 
@@ -42,7 +42,7 @@ $userInitials = $userInitials ?? 'JD';
         <li><button class="dropdown-item" type="button">Profile</button></li>
         <li><button class="dropdown-item" type="button">Settings</button></li>
         <li><hr class="dropdown-divider" /></li>
-        <li><button class="dropdown-item" type="button">Logout</button></li>
+        <li><a class="dropdown-item" href="loginPage.php">Logout</a></li>
       </ul>
     </div>
   </div>

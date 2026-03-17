@@ -45,7 +45,11 @@ $hrItems = [
   ['file' => 'employeeHandbook.php', 'label' => 'Employee Handbook'],
 ];
 
-$allNavItems = array_merge($employeeNavItems, $supervisorNavItems, $managerNavItems, $hrNavItems);
+$adminNavItems = [
+  ['id' => 'clients', 'label' => 'Clients', 'icon' => 'bi-people-fill', 'href' => 'clients.php'],
+];
+
+$allNavItems = array_merge($employeeNavItems, $supervisorNavItems, $managerNavItems, $hrNavItems, $adminNavItems);
 ?>
 <aside
   id="sidebar"

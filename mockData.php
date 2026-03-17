@@ -990,3 +990,246 @@ $highestAccount = [
 ];
 
 $averageDailyConsumption = 4.42;
+
+
+$clients = [
+	[
+		'id'           => '1',
+		'name'         => 'John Daniels',
+		'businessName' => 'Acme Corp Ltd.',
+		'website'      => 'www.acmecorp.com',
+		'telephone'    => '+1 (555) 123-4567',
+		'email'        => 'contact@acmecorp.com',
+		'state'        => 'California',
+		'hasAlert'     => true,
+	],
+	[
+		'id'           => '2',
+		'name'         => 'Sarah Mitchell',
+		'businessName' => 'TechStart Industries Inc.',
+		'website'      => 'www.techstart.io',
+		'telephone'    => '+1 (555) 234-5678',
+		'email'        => 'info@techstart.io',
+		'state'        => 'New York',
+		'hasAlert'     => false,
+	],
+	[
+		'id'           => '3',
+		'name'         => 'Michael Davis',
+		'businessName' => 'Global Solutions LLC',
+		'website'      => 'www.globalsolutions.com',
+		'telephone'    => '+1 (555) 345-6789',
+		'email'        => 'hello@globalsolutions.com',
+		'state'        => 'Texas',
+		'hasAlert'     => false,
+	],
+	[
+		'id'           => '4',
+		'name'         => 'Emily Thompson',
+		'businessName' => 'Innovate Labs Co.',
+		'website'      => 'www.innovatelabs.com',
+		'telephone'    => '+1 (555) 456-7890',
+		'email'        => 'contact@innovatelabs.com',
+		'state'        => 'Florida',
+		'hasAlert'     => true,
+	],
+	[
+		'id'           => '5',
+		'name'         => 'John Smith',
+		'businessName' => 'Digital Dynamics Inc.',
+		'website'      => 'www.digitaldynamics.net',
+		'telephone'    => '+1 (555) 567-8901',
+		'email'        => 'info@digitaldynamics.net',
+		'state'        => 'Washington',
+		'hasAlert'     => false,
+	],
+];
+
+$clientAccounts = [
+	'1' => [
+		['id' => 'a1', 'name' => 'Project Alpha',  'hours' => 120, 'allocatedHours' => 160, 'manager' => 'John Smith',       'status' => 'Active'],
+		['id' => 'a2', 'name' => 'Project Beta',   'hours' => 80,  'allocatedHours' => 100, 'manager' => 'Sarah Jones',      'status' => 'Active'],
+		['id' => 'a3', 'name' => 'Legacy System',  'hours' => 0,   'allocatedHours' => 40,  'manager' => 'Mike Wilson',      'status' => 'Deactivated'],
+	],
+	'2' => [
+		['id' => 'a4', 'name' => 'Mobile App Dev', 'hours' => 200, 'allocatedHours' => 240, 'manager' => 'Emily Brown',      'status' => 'Active'],
+		['id' => 'a5', 'name' => 'Web Platform',   'hours' => 150, 'allocatedHours' => 200, 'manager' => 'David Lee',        'status' => 'Active'],
+	],
+	'3' => [
+		['id' => 'a6', 'name' => 'Data Migration', 'hours' => 90,  'allocatedHours' => 120, 'manager' => 'Lisa Chen',        'status' => 'Active'],
+	],
+	'4' => [
+		['id' => 'a7', 'name' => 'AI Integration', 'hours' => 180, 'allocatedHours' => 200, 'manager' => 'Robert Taylor',    'status' => 'Active'],
+		['id' => 'a8', 'name' => 'Security Audit', 'hours' => 60,  'allocatedHours' => 80,  'manager' => 'Jennifer White',   'status' => 'Active'],
+	],
+	'5' => [
+		['id' => 'a9',  'name' => 'Cloud Migration',  'hours' => 140, 'allocatedHours' => 160, 'manager' => 'Michael Green', 'status' => 'Active'],
+		['id' => 'a10', 'name' => 'API Development',  'hours' => 100, 'allocatedHours' => 120, 'manager' => 'Amanda Clark',  'status' => 'Active'],
+	],
+];
+
+$clientPOCs = [
+	'1' => [
+		['id' => 'p1', 'name' => 'James Anderson'],
+		['id' => 'p2', 'name' => 'Patricia Martinez'],
+		['id' => 'p3', 'name' => 'Christopher Davis'],
+		['id' => 'p4', 'name' => 'Linda Rodriguez'],
+	],
+	'2' => [
+		['id' => 'p5', 'name' => 'William Garcia'],
+		['id' => 'p6', 'name' => 'Elizabeth Hernandez'],
+	],
+	'3' => [
+		['id' => 'p7', 'name' => 'Richard Lopez'],
+		['id' => 'p8', 'name' => 'Barbara Gonzalez'],
+		['id' => 'p9', 'name' => 'Joseph Wilson'],
+	],
+	'4' => [
+		['id' => 'p10', 'name' => 'Susan Moore'],
+		['id' => 'p11', 'name' => 'Charles Taylor'],
+	],
+	'5' => [
+		['id' => 'p12', 'name' => 'Jessica Thomas'],
+		['id' => 'p13', 'name' => 'Daniel Jackson'],
+		['id' => 'p14', 'name' => 'Karen White'],
+	],
+];
+
+$clientAccountPocs = [
+	'a1' => [
+		['id' => 'ap1', 'name' => 'James Anderson'],
+		['id' => 'ap2', 'name' => 'Patricia Martinez'],
+	],
+	'a2' => [
+		['id' => 'ap3', 'name' => 'Christopher Davis'],
+		['id' => 'ap4', 'name' => 'Linda Rodriguez'],
+	],
+	'a3' => [
+		['id' => 'ap5', 'name' => 'James Anderson'],
+	],
+	'a4' => [
+		['id' => 'ap6', 'name' => 'William Garcia'],
+		['id' => 'ap7', 'name' => 'Elizabeth Hernandez'],
+	],
+	'a5' => [
+		['id' => 'ap8', 'name' => 'William Garcia'],
+	],
+	'a6' => [
+		['id' => 'ap9', 'name' => 'Richard Lopez'],
+		['id' => 'ap10', 'name' => 'Joseph Wilson'],
+	],
+	'a7' => [
+		['id' => 'ap11', 'name' => 'Susan Moore'],
+	],
+	'a8' => [
+		['id' => 'ap12', 'name' => 'Charles Taylor'],
+		['id' => 'ap13', 'name' => 'Susan Moore'],
+	],
+	'a9' => [
+		['id' => 'ap14', 'name' => 'Jessica Thomas'],
+		['id' => 'ap15', 'name' => 'Daniel Jackson'],
+	],
+	'a10' => [
+		['id' => 'ap16', 'name' => 'Karen White'],
+	],
+];
+
+$clientHoursHistory = [
+	'a1' => [
+		[
+			'date' => 'Mar 12, 2026',
+			'user' => 'John Daniels',
+			'billingType' => 'Payment',
+			'hours' => '5',
+			'minutes' => '30',
+			'hourlyRate' => '10.00',
+			'grossRevenue' => '55.00',
+			'notes' => 'Additional development work requested by client.',
+		],
+		[
+			'date' => 'Mar 10, 2026',
+			'user' => 'Sarah Lee',
+			'billingType' => 'Credit',
+			'hours' => '2',
+			'minutes' => '00',
+			'hourlyRate' => '10.00',
+			'grossRevenue' => '0.00',
+			'notes' => 'Credit adjustment for overbilling.',
+		],
+	],
+	'a2' => [
+		[
+			'date' => 'Mar 08, 2026',
+			'user' => 'Patricia Martinez',
+			'billingType' => 'Free Hours',
+			'hours' => '1',
+			'minutes' => '45',
+			'hourlyRate' => '12.00',
+			'grossRevenue' => '0.00',
+			'notes' => 'Complimentary onboarding support.',
+		],
+	],
+	'a3' => [],
+];
+
+$clientNotes = [
+	'1' => [
+		[
+			'id' => 'n1',
+			'text' => 'Client requested additional support for weekend operations.',
+			'author' => 'John Daniels',
+			'timestamp' => 'Mar 14, 2026',
+		],
+		[
+			'id' => 'n2',
+			'text' => 'Shared the revised staffing recommendation for Project Alpha.',
+			'author' => 'Sarah Jones',
+			'timestamp' => 'Mar 12, 2026',
+		],
+	],
+	'2' => [
+		[
+			'id' => 'n3',
+			'text' => 'TechStart requested tighter weekly reporting on the mobile workstream.',
+			'author' => 'Emily Brown',
+			'timestamp' => 'Mar 11, 2026',
+		],
+	],
+	'3' => [
+		[
+			'id' => 'n4',
+			'text' => 'Client approved the migration discovery phase and wants milestone tracking visible.',
+			'author' => 'Lisa Chen',
+			'timestamp' => 'Mar 10, 2026',
+		],
+	],
+	'4' => [
+		[
+			'id' => 'n5',
+			'text' => 'Innovate Labs flagged AI integration support as business critical for the next sprint.',
+			'author' => 'Robert Taylor',
+			'timestamp' => 'Mar 15, 2026',
+		],
+	],
+	'5' => [
+		[
+			'id' => 'n6',
+			'text' => 'Digital Dynamics wants revenue forecasting added to the April planning review.',
+			'author' => 'Amanda Clark',
+			'timestamp' => 'Mar 13, 2026',
+		],
+	],
+];
+
+$clientManagerOptions = [
+	'John Smith',
+	'Sarah Jones',
+	'Mike Wilson',
+	'Emily Brown',
+	'David Lee',
+	'Lisa Chen',
+	'Robert Taylor',
+	'Jennifer White',
+	'Michael Green',
+	'Amanda Clark',
+];
