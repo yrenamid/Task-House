@@ -253,10 +253,10 @@ require __DIR__ . '/includes/sidebar.php';
   </div>
 </main>
 
-<?php require __DIR__ . '/modals/sales-new-lead-modal.php'; ?>
-<?php require __DIR__ . '/modals/sales-notes-modal.php'; ?>
-<?php require __DIR__ . '/modals/sales-edit-modal.php'; ?>
-<?php require __DIR__ . '/modals/sales-remove-modal.php'; ?>
-<?php require __DIR__ . '/modals/sales-closed-lost-modal.php'; ?>
+<?php require __DIR__ . '/partials/modals/sales-new-lead-modal.php'; ?>
+<?php require __DIR__ . '/partials/modals/sales-notes-modal.php'; ?>
+<?php require __DIR__ . '/partials/modals/sales-edit-modal.php'; ?>
+<?php require __DIR__ . '/partials/modals/sales-remove-modal.php'; ?>
+<?php require __DIR__ . '/partials/modals/sales-closed-lost-modal.php'; ?>
 
 <?php require __DIR__ . '/includes/footer.php'; ?>

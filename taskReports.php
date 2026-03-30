@@ -153,7 +153,7 @@ require __DIR__ . '/includes/sidebar.php';
   </div>
 </main>
 
-<?php require __DIR__ . '/modals/admin-add-report.php'; ?>
-<?php require __DIR__ . '/modals/admin-task-details.php'; ?>
+<?php require __DIR__ . '/partials/modals/admin-add-report.php'; ?>
+<?php require __DIR__ . '/partials/modals/admin-task-details.php'; ?>
 
 <?php require __DIR__ . '/includes/footer.php'; ?>
