@@ -46,7 +46,11 @@ $hrItems = [
 ];
 
 $adminNavItems = [
+  ['id' => 'welcome-admin', 'label' => 'Welcome Admin', 'icon' => 'bi-speedometer2', 'href' => 'welcomeAdmin.php'],
   ['id' => 'clients', 'label' => 'Clients', 'icon' => 'bi-people-fill', 'href' => 'clients.php'],
+  ['id' => 'attendance-overview', 'label' => 'Attendance Overview', 'icon' => 'bi-calendar2-week-fill', 'href' => 'attendanceOverview.php'],
+  ['id' => 'task-reports', 'label' => 'Task Reports', 'icon' => 'bi-clipboard-data-fill', 'href' => 'taskReports.php'],
+  ['id' => 'sales', 'label' => 'Sales', 'icon' => 'bi-graph-up-arrow', 'href' => 'sales.php'],
 ];
 
 $allNavItems = array_merge($employeeNavItems, $supervisorNavItems, $managerNavItems, $hrNavItems, $adminNavItems);
