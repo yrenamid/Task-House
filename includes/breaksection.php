@@ -34,11 +34,70 @@
 				<button
 					type="button"
 					class="btn fw-semibold btn-teal-app h-100 d-flex align-items-center justify-content-center"
+					data-bs-toggle="modal"
+					data-bs-target="#breakModal"
+					aria-label="Start Break"
 				>
 					<i class="bi bi-play-fill me-2"></i>
 					Start Break
 				</button>
 			</div>
 		</form>
+	</div>
+</div>
+
+<!-- ===== Break Modal ===== -->
+<div 
+	class="modal fade" 
+	id="breakModal" 
+	tabindex="-1" 
+	aria-labelledby="breakModalTitle" 
+	aria-hidden="true"
+>
+	<div class="modal-dialog modal-dialog-centered">
+		<div class="modal-content break-modal-content">
+			<div class="modal-header break-modal-header border-0 pb-0">
+				<h5 class="modal-title fw-bold" id="breakModalTitle">
+					<i class="bi bi-cup-hot-fill me-2"></i>Break Timer
+				</h5>
+				<button 
+					type="button" 
+					class="btn-close btn-close-white" 
+					data-bs-dismiss="modal" 
+					aria-label="Close"
+				></button>
+			</div>
+
+			<div class="modal-body break-modal-body d-flex flex-column align-items-center justify-content-center py-4 py-md-5">
+				<div class="break-timer-display text-center mb-4">
+					<div class="break-timer-value fw-bold display-4 mb-2">
+						<span id="breakTimerDisplay">00:00:00</span>
+					</div>
+					<p class="app-muted small mb-0">Break Duration</p>
+				</div>
+
+				<div class="break-status-info text-center mb-4 w-100">
+					<div class="alert alert-info-custom border-0 mb-0 px-3 py-2">
+						<p class="mb-0 small">
+							<i class="bi bi-info-circle me-2"></i>
+							Your break time is being tracked
+						</p>
+					</div>
+				</div>
+			</div>
+
+
+			<div class="modal-footer break-modal-footer border-0 pt-0 d-flex justify-content-center">
+				<button 
+					type="button" 
+					class="btn btn-success btn-lg fw-semibold d-flex align-items-center justify-content-center px-4"
+					data-bs-dismiss="modal"
+					aria-label="Back to Work"
+				>
+					<i class="bi bi-check-circle-fill me-2"></i>
+					Back to Work
+				</button>
+			</div>
+		</div>
 	</div>
 </div>

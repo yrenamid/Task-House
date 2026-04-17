@@ -27,19 +27,20 @@ $userInitials = $userInitials ?? 'JD';
         <span class="ms-2 d-none d-lg-inline"><?= htmlspecialchars($userName, ENT_QUOTES, 'UTF-8') ?></span>
       </button>
       <ul class="dropdown-menu dropdown-menu-end dropdown-dark">
-        <li><a class="dropdown-item" href="#">Profile</a></li>
+        <li><a class="dropdown-item" href="profile.php">Profile</a></li>
         <li><a class="dropdown-item" href="#">Settings</a></li>
         <li><hr class="dropdown-divider" /></li>
         <li><a class="dropdown-item" href="loginPage.php">Logout</a></li>
       </ul>
     </div>
 
+    <!----- Mobile Dropdown ----->
     <div class="dropdown d-md-none">
       <button class="btn btn-ghost header-icon" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Open menu">
         <span aria-hidden="true">⋮</span>
       </button>
       <ul class="dropdown-menu dropdown-menu-end dropdown-dark">
-        <li><button class="dropdown-item" type="button">Profile</button></li>
+        <li><a class="dropdown-item" href="profile.php">Profile</a></li>
         <li><button class="dropdown-item" type="button">Settings</button></li>
         <li><hr class="dropdown-divider" /></li>
         <li><a class="dropdown-item" href="loginPage.php">Logout</a></li>
