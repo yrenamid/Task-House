@@ -664,7 +664,7 @@ require __DIR__ . '/includes/header.php';
 
   <?php require __DIR__ . '/includes/viewtaskmodal.php'; ?>
 
-  <?php require __DIR__ . '/includes/updatetaskmodal.php'; ?>
+  <?php require __DIR__ . '/includes/updateTaskModal.php'; ?>
 
   <?php require __DIR__ . '/includes/canceltaskmodal.php'; ?>
   
