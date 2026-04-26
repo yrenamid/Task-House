@@ -8,8 +8,8 @@ $categoryList = ['Absent', 'Overtime', 'Late', 'Undertime'];
 $reasonList = ['Health', 'Errand', 'Emergency', 'Other'];
 $imageExtensions = ['jpg', 'jpeg', 'png', 'gif', 'webp', 'bmp'];
 
-$uploadDirectory = __DIR__ . '/../uploads/incidents';
-$uploadPublicPathPrefix = '../uploads/incidents/';
+$uploadDirectory = __DIR__ . '/uploads/incidents';
+$uploadPublicPathPrefix = 'uploads/incidents/';
 
 $incidents = $incidentReports ?? [];
 $employeeOptions = $incidentEmployees ?? [];
